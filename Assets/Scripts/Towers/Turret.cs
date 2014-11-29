@@ -54,7 +54,7 @@ public class Turret : MonoBehaviour
             if (Time.time >= nextMoveTime)
             {
                 //Calculate the position to aim, and rotate the turret to that position.
-                CalculateAimPosition(target.position + Vector3.up);
+                CalculateAimPosition(target.position);
                 turretBall.rotation = Quaternion.Lerp(turretBall.rotation, desiredRotation, Time.deltaTime * turnSpeed);
             }
 
@@ -143,7 +143,7 @@ public class Turret : MonoBehaviour
         {
             GameObject obj = Instantiate(bulletPrefab, muzzlePos.position, muzzlePos.rotation) as GameObject;
 			obj.transform.parent = transform;
-            Physics.IgnoreCollision(gameObject.GetComponent<BoxCollider>(), obj.collider);
+            Physics.IgnoreCollision(gameObject.collider, obj.collider);
 
             spawnedProjectiles.Add(obj);
 
