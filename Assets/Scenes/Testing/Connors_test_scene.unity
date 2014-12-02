@@ -598,6 +598,8 @@ GameObject:
   - 33: {fileID: 1341449154}
   - 136: {fileID: 1341449153}
   - 23: {fileID: 1341449152}
+  - 114: {fileID: 1341449156}
+  - 143: {fileID: 1341449157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -657,6 +659,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1341449156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341449151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca704e1631835c140a428cb09dc9d6a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  gravity: 20
+--- !u!143 &1341449157
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341449151}
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: .500000119
+  m_SlopeLimit: 45
+  m_StepOffset: .300000012
+  m_SkinWidth: .0799999982
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1449588028
 GameObject:
   m_ObjectHideFlags: 0
