@@ -15,6 +15,14 @@ public class PlaceTowers : MonoBehaviour
     {
         //Spawns a single tower, and sets it as the current (for testing)
         currentTower = (GameObject)Instantiate(towerPrefab, Vector3.up * 100, Quaternion.identity);
+        currentTower.GetComponent<Turret>().enabled = false;
+
+        Component[] comps = currentTower.GetComponentsInChildren<MeshRenderer>();
+
+        foreach (Component comp in comps)
+        {
+            comp.renderer.material.color = Color.green;
+        }
     }
 
     void Update()
