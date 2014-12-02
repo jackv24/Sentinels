@@ -3,20 +3,19 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour
 {
-	public Transform Target;
-	public float speed = 10.0f;
+	public Transform target;
+	public float speed = 0.3f;
 	
-	Vector3 direction;
+	private Vector3 initialPos;
 	
-	void Update() {
-		direction = Target.position - transform.position;
-		direction.y = 0;
-		float distance = direction.magnitude;
-		direction.Normalize();
-		
-		if(distance > 2){			
-			transform.position = transform.position + direction * speed * Time.deltaTime;
-		}
+	void Start()
+	{
+		initialPos = transform.position;   
+	}
+	
+	void Update()
+	{
+		transform.position = Vector3.Lerp(transform.position, target.position + initialPos, speed);
 	}
 	
 	
