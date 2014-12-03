@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Player\LookAt.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Projectile\Bullet.cs" />
      <Compile Include="Assets\Scripts\Towers\GenerateGrid.cs" />
      <Compile Include="Assets\Scripts\Towers\GridNode.cs" />

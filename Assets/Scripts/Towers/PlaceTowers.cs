@@ -13,8 +13,10 @@ public class PlaceTowers : MonoBehaviour
     public LayerMask layer;
 
     //The tower prefab to instantiate
-    public GameObject[] towerPrefabs;
-    private int towerIndex = -1;
+    public Tower[] towers;
+    private int towerIndex = 0;
+
+    private GridNode currentNode;
 
     //The current tower, to follow the mouse cursor over the grid for placement
     private GameObject currentTower;
@@ -47,21 +49,19 @@ public class PlaceTowers : MonoBehaviour
 
             if (Physics.Raycast(ray, out hitInfo, 100f, layer))
             {
-                GridNode node = hitInfo.collider.gameObject.GetComponent<GridNode>();
+                currentNode = hitInfo.collider.gameObject.GetComponent<GridNode>();
 
                 //If the node is not occupied...
-                if (!node.isOccupied)
+                if (!currentNode.isOccupied)
                 {
                     //Set the position of the current tower to the grid tile position
                     currentTower.transform.position = hitInfo.transform.position;
 
-                    //When the player clicks the left mouse button...
-                    if (Input.GetMouseButton(0))
+                    //When the player clicks the left mouse button, and there is enough resources...
+                    if (Input.GetMouseButton(0) && PlayerStats.instance.currentResources >= towers[towerIndex].cost)
                     {
-                        //Set the node to occupied
-                        node.isOccupied = true;
                         //Place the tower
-                        PlaceTower(towerPrefabs[towerIndex], hitInfo.transform.position);
+                        PlaceTower(towers[towerIndex].prefab, hitInfo.transform.position);
 
                         //Move the current tower out of view
                         currentTower.transform.position = Vector3.up * 100;
@@ -79,13 +79,13 @@ public class PlaceTowers : MonoBehaviour
             Destroy(currentTower);
 
         //If there is a prefab with that index...
-        if (index < towerPrefabs.Length && index >= 0)
+        if (index < towers.Length && index >= 0)
         {
             //Set the current tower index to that index
             towerIndex = index;
 
             //Spawn the placement tower
-            currentTower = (GameObject)Instantiate(towerPrefabs[towerIndex], Vector3.up * 100, Quaternion.identity);
+            currentTower = (GameObject)Instantiate(towers[towerIndex].prefab, Vector3.up * 100, Quaternion.identity);
             //Disable script - this is a placement dummy
             currentTower.GetComponent<Turret>().enabled = false;
 
@@ -118,5 +118,18 @@ public class PlaceTowers : MonoBehaviour
 
         //Parent the tower to the gameobject (for a clean heirarchy)
         tower.transform.parent = towers.transform;
+
+        //Set the node to occupied
+        currentNode.isOccupied = true;
+
+        PlayerStats.instance.RemoveResources(20);
     }
+}
+
+//Used for storing tower data in the inspector
+[System.Serializable]
+public class Tower
+{
+    public GameObject prefab;
+    public int cost;
 }
