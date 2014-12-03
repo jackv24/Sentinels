@@ -5,6 +5,8 @@ public class GenerateGrid : MonoBehaviour
 {
     //The node prefab to be instantiated in a grid
     public GameObject nodePrefab;
+    //Where the grid starts
+    public Vector3 origin;
     //The size of the grid (in node amounts)
     public Vector2 size;
     //The layer for rays to be cast to determine node height
@@ -22,6 +24,9 @@ public class GenerateGrid : MonoBehaviour
             float sizeX = nodePrefab.transform.localScale.x;
             float sizeY = nodePrefab.transform.localScale.z;
 
+            GameObject nodes = new GameObject("Nodes");
+            nodes.transform.parent = transform;
+
             //Create the grid. For every row...
             for (int i = 0; i < size.x; i++)
             {
@@ -29,7 +34,7 @@ public class GenerateGrid : MonoBehaviour
                 for (int j = 0; j < size.y; j++)
                 {
                     //Create the vector at which the node should be placed
-                    Vector3 placeVector = new Vector3(i * sizeX + transform.position.x, 500, j * sizeY + transform.position.z);
+                    Vector3 placeVector = new Vector3(i * sizeX + origin.x, 500, j * sizeY + origin.z);
 
                     RaycastHit hitInfo;
                     //Cast a ray down onto layer
@@ -41,7 +46,7 @@ public class GenerateGrid : MonoBehaviour
                         //Instantiate node
                         GameObject obj = (GameObject)Instantiate(nodePrefab, placeVector, Quaternion.identity);
                         //Set node as child of grid
-                        obj.transform.parent = transform;
+                        obj.transform.parent = nodes.transform;
                     }
                 }
             }
