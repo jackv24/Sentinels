@@ -61,7 +61,7 @@ public class PlaceTowers : MonoBehaviour
                     if (Input.GetMouseButton(0) && PlayerStats.instance.currentResources >= towers[towerIndex].cost)
                     {
                         //Place the tower
-                        PlaceTower(towers[towerIndex].prefab, hitInfo.transform.position);
+                        PlaceTower(towers[towerIndex].prefab, hitInfo.transform.position, towers[towerIndex].cost);
 
                         //Move the current tower out of view
                         currentTower.transform.position = Vector3.up * 100;
@@ -101,7 +101,7 @@ public class PlaceTowers : MonoBehaviour
     }
 
     //Spawns the specified tower at a specified position
-    void PlaceTower(GameObject towerPrefab, Vector3 position)
+    void PlaceTower(GameObject towerPrefab, Vector3 position, int cost)
     {
         //Spawns the tower
         GameObject tower = (GameObject)Instantiate(towerPrefab, position, Quaternion.identity);
@@ -122,7 +122,7 @@ public class PlaceTowers : MonoBehaviour
         //Set the node to occupied
         currentNode.isOccupied = true;
 
-        PlayerStats.instance.RemoveResources(20);
+        PlayerStats.instance.RemoveResources(cost);
     }
 }
 

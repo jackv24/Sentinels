@@ -1358,9 +1358,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 256
-  towers:
-  - prefab: {fileID: 100000, guid: bfd8f2787e38ea24a994e6b424b092e8, type: 2}
-    cost: 10
+  towers: []
 --- !u!4 &854545121
 Transform:
   m_ObjectHideFlags: 0
@@ -1372,6 +1370,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2013226607}
+  - {fileID: 894391481}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &854545122
@@ -1427,6 +1426,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
+--- !u!1 &894391480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100050, guid: a2c0b77ef3ceaf14f9b801b3297c6e4f, type: 2}
+  m_PrefabInternal: {fileID: 745746896}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 894391481}
+  - 114: {fileID: 894391484}
+  - 114: {fileID: 894391483}
+  - 114: {fileID: 894391482}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &894391481
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: a2c0b77ef3ceaf14f9b801b3297c6e4f, type: 2}
+  m_PrefabInternal: {fileID: 745746896}
+  m_GameObject: {fileID: 894391480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 854545121}
+  m_RootOrder: 1
+--- !u!114 &894391482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400056, guid: a2c0b77ef3ceaf14f9b801b3297c6e4f,
+    type: 2}
+  m_PrefabInternal: {fileID: 745746896}
+  m_GameObject: {fileID: 894391480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowActivationOnStandalone: 0
+--- !u!114 &894391483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400058, guid: a2c0b77ef3ceaf14f9b801b3297c6e4f,
+    type: 2}
+  m_PrefabInternal: {fileID: 745746896}
+  m_GameObject: {fileID: 894391480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_AllowActivationOnMobileDevice: 0
+--- !u!114 &894391484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400060, guid: a2c0b77ef3ceaf14f9b801b3297c6e4f,
+    type: 2}
+  m_PrefabInternal: {fileID: 745746896}
+  m_GameObject: {fileID: 894391480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 0
+  m_DragThreshold: 5
 --- !u!1 &993466315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2419,7 @@ MonoBehaviour:
   m_LightmapSize: 1024
   m_DrawTreesAndFoliage: 1
   m_CollectDetailPatches: 1
-  m_MaterialTemplate: {fileID: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 95219aebc6225234692069f0aa307c82, type: 2}
 --- !u!4 &1334721844
 Transform:
   m_ObjectHideFlags: 0
@@ -2674,7 +2749,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1597829282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3262,7 +3337,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '<b>Turret</b>
 
-    Cost: 10 Resources'
+    Cost: 20 Resources'
 --- !u!222 &1906378884
 CanvasRenderer:
   m_ObjectHideFlags: 0
