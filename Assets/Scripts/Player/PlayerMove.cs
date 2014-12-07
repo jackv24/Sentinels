@@ -2,25 +2,24 @@
 using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
-	//Variables
-	public float speed = 6.0F;
-	public float gravity = 20.0F;
-	private Vector3 moveDirection = Vector3.zero;
+	public float speed = 0.5f;
+	CharacterController controller;
+	// Use this for initialization
+	void Start () {
+		controller = GetComponent<CharacterController>();
+	}
 	
-	void Update() {
-		CharacterController controller = GetComponent<CharacterController>();
-
-		if (controller.isGrounded) {
-
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-			moveDirection = transform.TransformDirection(moveDirection);
-
-			moveDirection *= speed;
-
-			
-		}
-
-		moveDirection.y -= gravity * Time.deltaTime;
-		controller.Move(moveDirection * Time.deltaTime);
+	// Update is called once per frame
+	void Update () {
+		float x = Input.GetAxis("Horizontal");
+		float z = Input.GetAxis("Vertical");
+		Vector3 direction = new Vector3(x,0,z);
+		if (direction.magnitude > 1)
+			direction.Normalize();
+		direction.Normalize();
+		Vector3 velocity = direction * speed;
+		controller.SimpleMove(velocity);
+		
+		
 	}
 }

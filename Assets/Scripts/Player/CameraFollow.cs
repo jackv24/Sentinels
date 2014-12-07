@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
 	
 	void Start()
 	{
-		initialPos = transform.position;   
+		initialPos = transform.position - target.position;   
 	}
 	
 	void Update()
