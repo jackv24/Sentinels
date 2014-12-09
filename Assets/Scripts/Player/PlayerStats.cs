@@ -15,12 +15,10 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth = 100; 
     public int currentHealth = 100;
 
-    //Resource variables (Exactly the same as health)
-    public Slider resourcesBar;
+    //Resource variables
     public Text resourcesText;
     private string resourcesTextString;
 
-    public int maxResources = 100;
     public int currentResources = 100;
 
     void Start()
@@ -40,9 +38,8 @@ public class PlayerStats : MonoBehaviour
         //Replace '{0}' and '{1}' in text with current health and max health
         healthText.text = string.Format(healthTextString, currentHealth, maxHealth);
 
-        //Same as health
-        resourcesBar.value = (float)currentResources / maxResources;
-        resourcesText.text = string.Format(resourcesTextString, currentResources, maxResources);
+        //Set resources text with current value
+        resourcesText.text = string.Format(resourcesTextString, currentResources);
     }
 
     //Public functions for adding and removing health and resources
@@ -65,9 +62,6 @@ public class PlayerStats : MonoBehaviour
     public void AddResources(int amount)
     {
         currentResources += amount;
-
-        if (currentResources > maxResources)
-            currentResources = maxResources;
     }
 
     public void RemoveResources(int amount)
