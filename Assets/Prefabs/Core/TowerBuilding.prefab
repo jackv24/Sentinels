@@ -808,7 +808,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 005d54ace1b565b4780e9fde7a7056ad, type: 3}
+    m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 005d54ace1b565b4780e9fde7a7056ad, type: 3}
+    m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 005d54ace1b565b4780e9fde7a7056ad, type: 3}
+    m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 005d54ace1b565b4780e9fde7a7056ad, type: 3}
+    m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 005d54ace1b565b4780e9fde7a7056ad, type: 3}
+    m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -1595,7 +1595,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 005d54ace1b565b4780e9fde7a7056ad, type: 3}
+    m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -1609,7 +1609,6 @@ MonoBehaviour:
   m_Text: '<b>SH1TB0X - 3000</b>
 
     Cost: 15 Resources
-
 
     (This was all Connor... I swear!)'
 --- !u!222 &22200000
