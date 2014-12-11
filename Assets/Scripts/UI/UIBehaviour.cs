@@ -10,6 +10,24 @@ public class UIBehaviour : MonoBehaviour
         ClosePanels();
     }
 
+    #region options
+    public void setMasterVolume(float value)
+    {
+        Preferences.masterVolume = value;
+    }
+
+    public void setMusicVolume(float value)
+    {
+        Preferences.musicVolume = value;
+    }
+
+    public void setSoundVolume(float value)
+    {
+        Preferences.soundVolume = value;
+    }
+    #endregion
+
+    #region panels
     public void OpenPanel(int index)
     {
         ClosePanels();
@@ -24,7 +42,9 @@ public class UIBehaviour : MonoBehaviour
             panel.SetActive(false);
         }
     }
+    #endregion
 
+    #region levels
     public void LoadLevel(int index)
     {
         Application.LoadLevel(index);
@@ -39,4 +59,5 @@ public class UIBehaviour : MonoBehaviour
     {
         Application.Quit();
     }
+    #endregion
 }
