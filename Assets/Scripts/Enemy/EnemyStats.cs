@@ -12,8 +12,11 @@ public class EnemyStats : MonoBehaviour
 
     void Update()
     {
-        //Set health slider value to health value (0-1)
-        healthBar.value = (float)currentHealth / maxHealth;
+        if (healthBar)
+        {
+            //Set health slider value to health value (0-1)
+            healthBar.value = (float)currentHealth / maxHealth;
+        }
     }
 
     //Public functions for adding and removing health and resources

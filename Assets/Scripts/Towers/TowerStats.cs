@@ -29,7 +29,15 @@ public class TowerStats : MonoBehaviour
     {
         currentHealth -= amount;
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
+        {
             currentHealth = 0;
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

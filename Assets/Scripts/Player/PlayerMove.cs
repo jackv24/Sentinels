@@ -16,7 +16,6 @@ public class PlayerMove : MonoBehaviour {
 		Vector3 direction = new Vector3(x,0,z);
 		if (direction.magnitude > 1)
 			direction.Normalize();
-		direction.Normalize();
 		Vector3 velocity = direction * speed;
 		controller.SimpleMove(velocity);
 		

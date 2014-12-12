@@ -33,6 +33,8 @@ public class PlayerStats : MonoBehaviour
     public int levelXP = 1000;
     public int currentLevel = 0;
 
+    public float barAnimSmoothness = 0.25f;
+
     void Start()
     {
         //Makes this class a static instance to be accessed easily
@@ -48,7 +50,7 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         //Set health slider value to health value (0-1)
-        healthBar.value = (float)currentHealth / maxHealth;
+        healthBar.value = Mathf.Lerp(healthBar.value, (float)currentHealth / maxHealth, barAnimSmoothness);
         //Replace '{0}' and '{1}' in text with current health and max health
         healthText.text = string.Format(healthTextString, currentHealth, maxHealth);
 
@@ -56,7 +58,7 @@ public class PlayerStats : MonoBehaviour
         resourcesText.text = string.Format(resourcesTextString, currentResources);
 
         //Set xp slider value to xp value (0-1)
-        xpBar.value = (float)currentXP / levelXP;
+        xpBar.value = Mathf.Lerp(xpBar.value, (float)currentXP / levelXP, barAnimSmoothness);
         //Replace '{0}' and '{1}' in text with current health and max health
         xpText.text = string.Format(xpTextString, currentXP, levelXP);
 
