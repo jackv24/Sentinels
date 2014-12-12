@@ -21,6 +21,14 @@ public class PlayerStats : MonoBehaviour
 
     public int currentResources = 100;
 
+    //Experience variables
+    public Slider xpBar;
+    public Text xpText;
+    private string xpTextString;
+
+    public int currentXP = 0;
+    public int maxXP = 1000;
+
     void Start()
     {
         //Makes this class a static instance to be accessed easily
@@ -29,6 +37,7 @@ public class PlayerStats : MonoBehaviour
         //Store initial text values
         healthTextString = healthText.text;
         resourcesTextString = resourcesText.text;
+        xpTextString = xpText.text;
     }
 
     void Update()
@@ -40,6 +49,11 @@ public class PlayerStats : MonoBehaviour
 
         //Set resources text with current value
         resourcesText.text = string.Format(resourcesTextString, currentResources);
+
+        //Set xp slider value to xp value (0-1)
+        xpBar.value = (float)currentXP / maxXP;
+        //Replace '{0}' and '{1}' in text with current health and max health
+        xpText.text = string.Format(xpTextString, currentXP, maxXP);
     }
 
     //Public functions for adding and removing health and resources
@@ -70,5 +84,22 @@ public class PlayerStats : MonoBehaviour
 
         if (currentResources < 0)
             currentResources = 0;
+    }
+
+    //Add and remove XP
+    public void AddXP(int amount)
+    {
+        currentXP += amount;
+
+        if (currentXP > maxXP)
+            currentXP = maxXP;
+    }
+
+    public void RemoveXP(int amount)
+    {
+        currentXP -= amount;
+
+        if (currentXP < 0)
+            currentXP = 0;
     }
 }

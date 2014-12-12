@@ -59,10 +59,13 @@
      <Compile Include="Assets\Scripts\Towers\TowerStats.cs" />
      <Compile Include="Assets\Scripts\Towers\Turret.cs" />
      <Compile Include="Assets\Scripts\UI\Billboard.cs" />
-     <Compile Include="Assets\Scripts\UI\SliderValueToText.cs" />
+     <Compile Include="Assets\Scripts\UI\SliderValue.cs" />
      <Compile Include="Assets\Scripts\UI\UIBehaviour.cs" />
+     <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Scripts\TransparentDoubleSided.shader" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

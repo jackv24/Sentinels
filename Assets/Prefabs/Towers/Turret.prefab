@@ -501,7 +501,7 @@ MonoBehaviour:
   firePauseTime: .25
   errorAmount: 1
   targetTag: Player
-  bulletPrefab: {fileID: 100000, guid: 84bf91aa2a2749147b53eb3889942945, type: 2}
+  bulletPrefab: {fileID: 100000, guid: 90408b726a8129340997530e533ff641, type: 2}
   muzzleEffect: {fileID: 0}
   turretBall: {fileID: 400008}
   muzzleTransforms:
