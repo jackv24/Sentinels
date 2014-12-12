@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class LookAt : MonoBehaviour {
-	
-	// Use this for initializationvoid Start () { 
-	
-	
+
+	public LayerMask Mask;
+
 	// Update is called once per frame
 	void Update()
 	{
@@ -14,12 +13,15 @@ public class LookAt : MonoBehaviour {
 		//  Cast a ray from the screen into the world
 		Ray ray = Camera.main.ScreenPointToRay(mouse);
 		RaycastHit hitInfo;
-		Physics.Raycast(ray, out hitInfo);
+		if(Physics.Raycast(ray, out hitInfo, 1000f, Mask))
+		{
+			//  Adjust target position's Y
+			Vector3 target = hitInfo.point;
+			target.y = transform.position.y;
+			transform.LookAt(target);
+		}
 		
-		//  Adjust target position's Y
-		Vector3 target = hitInfo.point;
-		target.y = transform.position.y;
-		transform.LookAt(target);
+	
 		
 	}
 }
