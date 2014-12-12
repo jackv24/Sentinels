@@ -26,8 +26,12 @@ public class PlayerStats : MonoBehaviour
     public Text xpText;
     private string xpTextString;
 
+    public Text levelText;
+    private string levelTextString;
+
     public int currentXP = 0;
-    public int maxXP = 1000;
+    public int levelXP = 1000;
+    public int currentLevel = 0;
 
     void Start()
     {
@@ -38,6 +42,7 @@ public class PlayerStats : MonoBehaviour
         healthTextString = healthText.text;
         resourcesTextString = resourcesText.text;
         xpTextString = xpText.text;
+        levelTextString = levelText.text;
     }
 
     void Update()
@@ -51,9 +56,15 @@ public class PlayerStats : MonoBehaviour
         resourcesText.text = string.Format(resourcesTextString, currentResources);
 
         //Set xp slider value to xp value (0-1)
-        xpBar.value = (float)currentXP / maxXP;
+        xpBar.value = (float)currentXP / levelXP;
         //Replace '{0}' and '{1}' in text with current health and max health
-        xpText.text = string.Format(xpTextString, currentXP, maxXP);
+        xpText.text = string.Format(xpTextString, currentXP, levelXP);
+
+        //Replace {0} with current level
+        levelText.text = string.Format(levelTextString, currentLevel);
+
+        if (Input.GetKeyDown(KeyCode.U))
+            AddXP(110);
     }
 
     //Public functions for adding and removing health and resources
@@ -91,8 +102,11 @@ public class PlayerStats : MonoBehaviour
     {
         currentXP += amount;
 
-        if (currentXP > maxXP)
-            currentXP = maxXP;
+        if (currentXP > levelXP)
+        {
+            currentXP = currentXP - levelXP;
+            currentLevel++;
+        }
     }
 
     public void RemoveXP(int amount)

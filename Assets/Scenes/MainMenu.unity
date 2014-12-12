@@ -2429,7 +2429,7 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 0, y: -116}
+  m_AnchoredPosition: {x: 0, y: -118}
   m_SizeDelta: {x: 412, y: 48}
   m_Pivot: {x: 0, y: .5}
 --- !u!114 &955356899
@@ -2616,8 +2616,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1319654960}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: .578059077}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: .5, y: .5}
@@ -3164,7 +3164,7 @@ MonoBehaviour:
 
     <i>Jack Vine</i>
 
-    <i>Paul Leitch...maybe...</i>
+    <i>Paul Leitch</i>
 
 
     <size=36>Fonts:</size>
