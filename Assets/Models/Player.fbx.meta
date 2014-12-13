@@ -14,6 +14,31 @@ ModelImporter:
     100016: Spike_BottomLeft
     100018: Spike_BottomRight
     100020: Spike_Top
+    100022: Armature
+    100024: Armature|Arm_IK_Pole_L
+    100026: Armature|Arm_IK_Pole_R
+    100028: Armature|Arm_IK_Target_L
+    100030: Armature|Arm_IK_Target_R
+    100032: Armature|Arm_L
+    100034: Armature|Arm_R
+    100036: Armature|Chest
+    100038: Armature|Foot_L
+    100040: Armature|Foot_R
+    100042: Armature|Forearm_L
+    100044: Armature|Forearm_R
+    100046: Armature|Hand_L
+    100048: Armature|Head
+    100050: Armature|Hips
+    100052: Armature|Leg_IK_Pole_L
+    100054: Armature|Leg_IK_Pole_R
+    100056: Armature|Leg_IK_Target_L
+    100058: Armature|Leg_IK_Target_R
+    100060: Armature|root
+    100062: Armature|Shin_L
+    100064: Armature|Shin_R
+    100066: Armature|Thigh_L
+    100068: Armature|Thigh_R
+    100070: Shoulders
     400000: Arm_Cannon
     400002: Body
     400004: Communicator
@@ -25,6 +50,31 @@ ModelImporter:
     400016: Spike_BottomLeft
     400018: Spike_BottomRight
     400020: Spike_Top
+    400022: Armature
+    400024: Armature|Arm_IK_Pole_L
+    400026: Armature|Arm_IK_Pole_R
+    400028: Armature|Arm_IK_Target_L
+    400030: Armature|Arm_IK_Target_R
+    400032: Armature|Arm_L
+    400034: Armature|Arm_R
+    400036: Armature|Chest
+    400038: Armature|Foot_L
+    400040: Armature|Foot_R
+    400042: Armature|Forearm_L
+    400044: Armature|Forearm_R
+    400046: Armature|Hand_L
+    400048: Armature|Head
+    400050: Armature|Hips
+    400052: Armature|Leg_IK_Pole_L
+    400054: Armature|Leg_IK_Pole_R
+    400056: Armature|Leg_IK_Target_L
+    400058: Armature|Leg_IK_Target_R
+    400060: Armature|root
+    400062: Armature|Shin_L
+    400064: Armature|Shin_R
+    400066: Armature|Thigh_L
+    400068: Armature|Thigh_R
+    400070: Shoulders
     2300000: Arm_Cannon
     2300002: Body
     2300004: Communicator
@@ -52,7 +102,16 @@ ModelImporter:
     4300008: Spike_BottomRight
     4300010: Shoulder_R
     4300012: Body
+    4300014: Shoulders
+    7400000: Armature|Idle
+    7400002: Armature|Idle_Anim
     9500000: //RootNode
+    13700000: Arm_Cannon
+    13700002: Body
+    13700004: Communicator
+    13700006: Goggles
+    13700008: Hair
+    13700010: Shoulders
   materials:
     importMaterials: 0
     materialName: 0
@@ -68,7 +127,183 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Idle
+      takeName: Armature|Idle
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Cannon
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_L
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_L/Armature|Arm_IK_Pole_L
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_R/Armature|Arm_IK_Pole_R
+        weight: 1
+      - path: Armature/Armature|root
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L/Armature|Forearm_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L/Armature|Forearm_L/Armature|Hand_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_R/Armature|Forearm_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Head
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L/Armature|Shin_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L/Armature|Shin_L/Armature|Foot_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R/Armature|Shin_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R/Armature|Shin_R/Armature|Foot_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_L/Armature|Leg_IK_Pole_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_R/Armature|Leg_IK_Pole_R
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Communicator
+        weight: 1
+      - path: Goggles
+        weight: 1
+      - path: Hair
+        weight: 1
+      - path: Shoulders
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Idle_Anim
+      takeName: Armature|Idle_Anim
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Cannon
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_L
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_L/Armature|Arm_IK_Pole_L
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|Arm_IK_Target_R/Armature|Arm_IK_Pole_R
+        weight: 1
+      - path: Armature/Armature|root
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L/Armature|Forearm_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L/Armature|Forearm_L/Armature|Hand_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_R/Armature|Forearm_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Head
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L/Armature|Shin_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L/Armature|Shin_L/Armature|Foot_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R/Armature|Shin_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R/Armature|Shin_R/Armature|Foot_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_L/Armature|Leg_IK_Pole_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_R/Armature|Leg_IK_Pole_R
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Communicator
+        weight: 1
+      - path: Goggles
+        weight: 1
+      - path: Hair
+        weight: 1
+      - path: Shoulders
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

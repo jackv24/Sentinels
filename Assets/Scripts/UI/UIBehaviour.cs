@@ -6,6 +6,7 @@ public class UIBehaviour : MonoBehaviour
 {
     //Stores an array of panels - to be opened and closed
     public GameObject[] panels;
+    private int lastPanelIndex = -1;
 
     void Start()
     {
@@ -34,7 +35,13 @@ public class UIBehaviour : MonoBehaviour
     {
         ClosePanels();
 
-        panels[index].SetActive(true);
+        if (lastPanelIndex != index)
+        {
+            panels[index].SetActive(true);
+            lastPanelIndex = index;
+        }
+        else
+            lastPanelIndex = -1;
     }
 
     public void ClosePanels()
