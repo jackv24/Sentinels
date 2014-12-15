@@ -41,30 +41,41 @@ public class PlayerStats : MonoBehaviour
         instance = this;
 
         //Store initial text values
-        healthTextString = healthText.text;
-        resourcesTextString = resourcesText.text;
-        xpTextString = xpText.text;
-        levelTextString = levelText.text;
+        if(healthText)
+            healthTextString = healthText.text;
+        if(resourcesText)
+            resourcesTextString = resourcesText.text;
+        if (xpText)
+            xpTextString = xpText.text;
+        if(levelText)
+            levelTextString = levelText.text;
     }
 
     void Update()
     {
-        //Set health slider value to health value (0-1)
-        healthBar.value = Mathf.Lerp(healthBar.value, (float)currentHealth / maxHealth, barAnimSmoothness);
-        //Replace '{0}' and '{1}' in text with current health and max health
-        healthText.text = string.Format(healthTextString, currentHealth, maxHealth);
+        if(healthBar)
+            //Set health slider value to health value (0-1)
+            healthBar.value = Mathf.Lerp(healthBar.value, (float)currentHealth / maxHealth, barAnimSmoothness);
+        if(healthText)
+            //Replace '{0}' and '{1}' in text with current health and max health
+            healthText.text = string.Format(healthTextString, currentHealth, maxHealth);
 
-        //Set resources text with current value
-        resourcesText.text = string.Format(resourcesTextString, currentResources);
+        if(resourcesText)
+            //Set resources text with current value
+            resourcesText.text = string.Format(resourcesTextString, currentResources);
 
-        //Set xp slider value to xp value (0-1)
-        xpBar.value = Mathf.Lerp(xpBar.value, (float)currentXP / levelXP, barAnimSmoothness);
-        //Replace '{0}' and '{1}' in text with current health and max health
-        xpText.text = string.Format(xpTextString, currentXP, levelXP);
+        if(xpBar)
+            //Set xp slider value to xp value (0-1)
+            xpBar.value = Mathf.Lerp(xpBar.value, (float)currentXP / levelXP, barAnimSmoothness);
+        if(xpText)
+            //Replace '{0}' and '{1}' in text with current health and max health
+            xpText.text = string.Format(xpTextString, currentXP, levelXP);
 
-        //Replace {0} with current level
-        levelText.text = string.Format(levelTextString, currentLevel);
+        if(levelText)
+            //Replace {0} with current level
+            levelText.text = string.Format(levelTextString, currentLevel);
 
+        //For testing purposes
         if (Input.GetKeyDown(KeyCode.U))
             AddXP(110);
     }

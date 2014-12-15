@@ -10,15 +10,14 @@ public class CameraFollow : MonoBehaviour
 	
 	void Start()
 	{
-		initialPos = transform.position - target.position;   
+		initialPos = transform.position - target.position;
+
+        if (!target)
+            target = GameObject.Find("Player").transform;
 	}
 	
 	void Update()
 	{
 		transform.position = Vector3.Lerp(transform.position, target.position + initialPos, speed);
 	}
-	
-	
-	
-	
 }

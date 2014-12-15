@@ -1,110 +1,79 @@
 fileFormatVersion: 2
-guid: cc2ec89f70ef3b64b910621832d9113d
+guid: 20db98677744d844dbe097b96c0a9b7a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: Arm_Cannon
-    100002: Body
-    100004: Communicator
-    100006: Goggles
-    100008: Hair
-    100010: //RootNode
-    100012: Shoulder_L
-    100014: Shoulder_R
-    100016: Spike_BottomLeft
-    100018: Spike_BottomRight
-    100020: Spike_Top
-    100022: Armature
-    100024: Armature|Arm_IK_Pole_L
-    100026: Armature|Arm_IK_Pole_R
-    100028: Armature|Arm_IK_Target_L
-    100030: Armature|Arm_IK_Target_R
-    100032: Armature|Arm_L
-    100034: Armature|Arm_R
-    100036: Armature|Chest
-    100038: Armature|Foot_L
-    100040: Armature|Foot_R
-    100042: Armature|Forearm_L
-    100044: Armature|Forearm_R
-    100046: Armature|Hand_L
-    100048: Armature|Head
-    100050: Armature|Hips
-    100052: Armature|Leg_IK_Pole_L
-    100054: Armature|Leg_IK_Pole_R
-    100056: Armature|Leg_IK_Target_L
-    100058: Armature|Leg_IK_Target_R
-    100060: Armature|root
-    100062: Armature|Shin_L
-    100064: Armature|Shin_R
-    100066: Armature|Thigh_L
-    100068: Armature|Thigh_R
-    100070: Shoulders
+    100002: Armature
+    100004: Armature|Arm_IK_Pole_L
+    100006: Armature|Arm_IK_Pole_R
+    100008: Armature|Arm_IK_Target_L
+    100010: Armature|Arm_IK_Target_R
+    100012: Armature|Arm_L
+    100014: Armature|Arm_R
+    100016: Armature|Chest
+    100018: Armature|Foot_L
+    100020: Armature|Foot_R
+    100022: Armature|Forearm_L
+    100024: Armature|Forearm_R
+    100026: Armature|Hand_L
+    100028: Armature|Head
+    100030: Armature|Hips
+    100032: Armature|Leg_IK_Pole_L
+    100034: Armature|Leg_IK_Pole_R
+    100036: Armature|Leg_IK_Target_L
+    100038: Armature|Leg_IK_Target_R
+    100040: Armature|root
+    100042: Armature|Shin_L
+    100044: Armature|Shin_R
+    100046: Armature|Thigh_L
+    100048: Armature|Thigh_R
+    100050: Body
+    100052: Communicator
+    100054: Goggles
+    100056: Hair
+    100058: //RootNode
+    100060: Shoulders
     400000: Arm_Cannon
-    400002: Body
-    400004: Communicator
-    400006: Goggles
-    400008: Hair
-    400010: //RootNode
-    400012: Shoulder_L
-    400014: Shoulder_R
-    400016: Spike_BottomLeft
-    400018: Spike_BottomRight
-    400020: Spike_Top
-    400022: Armature
-    400024: Armature|Arm_IK_Pole_L
-    400026: Armature|Arm_IK_Pole_R
-    400028: Armature|Arm_IK_Target_L
-    400030: Armature|Arm_IK_Target_R
-    400032: Armature|Arm_L
-    400034: Armature|Arm_R
-    400036: Armature|Chest
-    400038: Armature|Foot_L
-    400040: Armature|Foot_R
-    400042: Armature|Forearm_L
-    400044: Armature|Forearm_R
-    400046: Armature|Hand_L
-    400048: Armature|Head
-    400050: Armature|Hips
-    400052: Armature|Leg_IK_Pole_L
-    400054: Armature|Leg_IK_Pole_R
-    400056: Armature|Leg_IK_Target_L
-    400058: Armature|Leg_IK_Target_R
-    400060: Armature|root
-    400062: Armature|Shin_L
-    400064: Armature|Shin_R
-    400066: Armature|Thigh_L
-    400068: Armature|Thigh_R
-    400070: Shoulders
-    2300000: Arm_Cannon
-    2300002: Body
-    2300004: Communicator
-    2300006: Goggles
-    2300008: Hair
-    2300010: Shoulder_L
-    2300012: Shoulder_R
-    2300014: Spike_BottomLeft
-    2300016: Spike_BottomRight
-    2300018: Spike_Top
-    3300000: Arm_Cannon
-    3300002: Body
-    3300004: Communicator
-    3300006: Goggles
-    3300008: Hair
-    3300010: Shoulder_L
-    3300012: Shoulder_R
-    3300014: Spike_BottomLeft
-    3300016: Spike_BottomRight
-    3300018: Spike_Top
-    4300000: Hair
-    4300002: Communicator
+    400002: Armature
+    400004: Armature|Arm_IK_Pole_L
+    400006: Armature|Arm_IK_Pole_R
+    400008: Armature|Arm_IK_Target_L
+    400010: Armature|Arm_IK_Target_R
+    400012: Armature|Arm_L
+    400014: Armature|Arm_R
+    400016: Armature|Chest
+    400018: Armature|Foot_L
+    400020: Armature|Foot_R
+    400022: Armature|Forearm_L
+    400024: Armature|Forearm_R
+    400026: Armature|Hand_L
+    400028: Armature|Head
+    400030: Armature|Hips
+    400032: Armature|Leg_IK_Pole_L
+    400034: Armature|Leg_IK_Pole_R
+    400036: Armature|Leg_IK_Target_L
+    400038: Armature|Leg_IK_Target_R
+    400040: Armature|root
+    400042: Armature|Shin_L
+    400044: Armature|Shin_R
+    400046: Armature|Thigh_L
+    400048: Armature|Thigh_R
+    400050: Body
+    400052: Communicator
+    400054: Goggles
+    400056: Hair
+    400058: //RootNode
+    400060: Shoulders
+    4300000: Body
+    4300002: Hair
     4300004: Goggles
-    4300006: Arm_Cannon
-    4300008: Spike_BottomRight
-    4300010: Shoulder_R
-    4300012: Body
-    4300014: Shoulders
+    4300006: Communicator
+    4300008: Arm_Cannon
+    4300010: Shoulders
     7400000: Armature|Idle
     7400002: Armature|Idle_Anim
+    7400004: Armature|Run_Forward
     9500000: //RootNode
     13700000: Arm_Cannon
     13700002: Body
@@ -158,15 +127,15 @@ ModelImporter:
         weight: 1
       - path: Armature
         weight: 1
-      - path: Armature/Armature|Arm_IK_Target_L
-        weight: 1
-      - path: Armature/Armature|Arm_IK_Target_L/Armature|Arm_IK_Pole_L
-        weight: 1
-      - path: Armature/Armature|Arm_IK_Target_R
-        weight: 1
-      - path: Armature/Armature|Arm_IK_Target_R/Armature|Arm_IK_Pole_R
-        weight: 1
       - path: Armature/Armature|root
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_L/Armature|Arm_IK_Pole_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_R/Armature|Arm_IK_Pole_R
         weight: 1
       - path: Armature/Armature|root/Armature|Hips
         weight: 1
@@ -246,15 +215,103 @@ ModelImporter:
         weight: 1
       - path: Armature
         weight: 1
-      - path: Armature/Armature|Arm_IK_Target_L
+      - path: Armature/Armature|root
         weight: 1
-      - path: Armature/Armature|Arm_IK_Target_L/Armature|Arm_IK_Pole_L
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_L
         weight: 1
-      - path: Armature/Armature|Arm_IK_Target_R
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_L/Armature|Arm_IK_Pole_L
         weight: 1
-      - path: Armature/Armature|Arm_IK_Target_R/Armature|Arm_IK_Pole_R
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_R/Armature|Arm_IK_Pole_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L/Armature|Forearm_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_L/Armature|Forearm_L/Armature|Hand_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Arm_R/Armature|Forearm_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Chest/Armature|Head
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L/Armature|Shin_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_L/Armature|Shin_L/Armature|Foot_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R/Armature|Shin_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Hips/Armature|Thigh_R/Armature|Shin_R/Armature|Foot_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_L/Armature|Leg_IK_Pole_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Leg_IK_Target_R/Armature|Leg_IK_Pole_R
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Communicator
+        weight: 1
+      - path: Goggles
+        weight: 1
+      - path: Hair
+        weight: 1
+      - path: Shoulders
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Run_Forward
+      takeName: Armature|Run_Forward
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Cannon
+        weight: 1
+      - path: Armature
         weight: 1
       - path: Armature/Armature|root
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_L/Armature|Arm_IK_Pole_L
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_R
+        weight: 1
+      - path: Armature/Armature|root/Armature|Arm_IK_Target_R/Armature|Arm_IK_Pole_R
         weight: 1
       - path: Armature/Armature|root/Armature|Hips
         weight: 1
@@ -321,9 +378,9 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
   tangentSpace:
-    normalSmoothAngle: 70
+    normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0

@@ -1,24 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour {
+[RequireComponent(typeof(CharacterController))]
+public class PlayerMove : MonoBehaviour
+{
 	public float speed = 0.5f;
+
+    [HideInInspector]
+    public Vector3 inputVector;
+
 	CharacterController controller;
-	// Use this for initialization
-	void Start () {
+
+	void Start ()
+    {
 		controller = GetComponent<CharacterController>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		float x = Input.GetAxis("Horizontal");
-		float z = Input.GetAxis("Vertical");
-		Vector3 direction = new Vector3(x,0,z);
-		if (direction.magnitude > 1)
-			direction.Normalize();
-		Vector3 velocity = direction * speed;
+	void Update ()
+    {
+        inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+		if (inputVector.magnitude > 1)
+			inputVector.Normalize();
+
+		Vector3 velocity = inputVector * speed;
+
 		controller.SimpleMove(velocity);
-		
-		
 	}
 }

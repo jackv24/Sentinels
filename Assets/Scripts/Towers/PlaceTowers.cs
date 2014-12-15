@@ -6,8 +6,6 @@ public class PlaceTowers : MonoBehaviour
 {
     public GameObject placementUI;
 
-    public GameObject grid;
-
     //Can the player place towers?
     public bool isEnabled = false;
 
@@ -26,7 +24,6 @@ public class PlaceTowers : MonoBehaviour
     void Start()
     {
         placementUI.SetActive(isEnabled);
-        grid.SetActive(isEnabled);
     }
 
     void Update()
@@ -36,15 +33,9 @@ public class PlaceTowers : MonoBehaviour
             isEnabled = !isEnabled;
 
             if (isEnabled)
-            {
                 ChangeCurrentTower(towerIndex);
-                grid.SetActive(true);
-            }
             else
-            {
                 ChangeCurrentTower(-1);
-                grid.SetActive(false);
-            }
 
             placementUI.SetActive(isEnabled);
         }
