@@ -7002,7 +7002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomLevelSelected: 1
   ZoomLevels:
-  - 50
+  - 60
   - 40
   - 20
 --- !u!1 &2070983907
