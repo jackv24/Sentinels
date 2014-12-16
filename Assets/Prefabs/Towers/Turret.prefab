@@ -500,7 +500,7 @@ MonoBehaviour:
   turnSpeed: 10
   firePauseTime: .25
   errorAmount: 1
-  targetTag: Player
+  targetTag: Enemy
   bulletPrefab: {fileID: 100000, guid: 90408b726a8129340997530e533ff641, type: 2}
   muzzleEffect: {fileID: 0}
   turretBall: {fileID: 400008}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class GenerateGrid : MonoBehaviour
 {
     //The node prefab to be instantiated in a grid
@@ -17,15 +18,25 @@ public class GenerateGrid : MonoBehaviour
 
     void Start()
     {
+        generate = false;
+    }
+
+    void Update()
+    {
         //If a grid is to be generated...
         if (generate)
         {
+            Debug.Log("Generating Grid");
+            generate = false;
+
             //Get the size of the node's box collider
             float sizeX = nodePrefab.transform.localScale.x;
             float sizeY = nodePrefab.transform.localScale.z;
 
+            if (GameObject.Find("Nodes"))
+                DestroyImmediate(GameObject.Find("Nodes"));
+
             GameObject nodes = new GameObject("Nodes");
-            nodes.transform.parent = transform;
 
             //Create the grid. For every row...
             for (int i = 0; i < size.x; i++)

@@ -1,23 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* Reads in mouse input, and therefore orbits the camera based on that input. */
+
 public class CameraFollow : MonoBehaviour
 {
-	public Transform target;
-	public float speed = 0.3f;
-	
-	private Vector3 initialPos;
-	
-	void Start()
-	{
-		initialPos = transform.position - target.position;
+    public Transform target;
 
-        if (!target)
-            target = GameObject.Find("Player").transform;
-	}
-	
-	void Update()
-	{
-		transform.position = Vector3.Lerp(transform.position, target.position + initialPos, speed);
-	}
+    public float heightOffset = 1.5f;
+
+    public float distance = 6.0f;
+    public float distanceMin = 1.0f;
+    public float distanceMax = 10.0f;
+
+    public float CameraZoomSpeed = 50.0f;
+
+    void LateUpdate()
+    {
+        //Don't do anything if no player is registered.
+        if (target == null)
+            return;
+
+        //Zoom
+        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+            distance -= CameraZoomSpeed * Time.deltaTime;
+        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+            distance += CameraZoomSpeed * Time.deltaTime;
+
+        distance = Mathf.Clamp(distance, distanceMin, distanceMax);
+
+        transform.position = target.position;
+        transform.position += transform.rotation * Vector3.back * distance;
+        transform.position += Vector3.up * heightOffset;
+    }
 }

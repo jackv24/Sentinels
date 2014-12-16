@@ -90,7 +90,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: .25
+  heightOffset: 1.5
+  distance: 15
+  distanceMin: 5
+  distanceMax: 25
+  CameraZoomSpeed: 50
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

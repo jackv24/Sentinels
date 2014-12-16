@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class PlaceTowers : MonoBehaviour
 {
     public GameObject placementUI;
+    public GameObject grid;
 
     //Can the player place towers?
     public bool isEnabled = false;
@@ -24,6 +25,7 @@ public class PlaceTowers : MonoBehaviour
     void Start()
     {
         placementUI.SetActive(isEnabled);
+        grid.SetActive(isEnabled);
     }
 
     void Update()
@@ -38,6 +40,7 @@ public class PlaceTowers : MonoBehaviour
                 ChangeCurrentTower(-1);
 
             placementUI.SetActive(isEnabled);
+            grid.SetActive(isEnabled);
         }
 
         //If enabled, and If a tower is selected, and If the mouse isn't over a GUI element...
