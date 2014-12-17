@@ -10,6 +10,10 @@ public class Preferences : MonoBehaviour
     public float musicVolume = 1f;
     public float soundVolume = 1f;
 
+    public bool canPlayerShoot = true;
+
+    public bool isGamePaused = false;
+
     void Start()
     {
         instance = this;

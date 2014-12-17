@@ -30,18 +30,11 @@ public class PlaceTowers : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("ToggleBuild"))
-        {
-            isEnabled = !isEnabled;
+        if (Input.GetButtonDown("ToggleBuild") && !Preferences.instance.isGamePaused)
+            ToggleBuild();
 
-            if (isEnabled)
-                ChangeCurrentTower(towerIndex);
-            else
-                ChangeCurrentTower(-1);
-
-            placementUI.SetActive(isEnabled);
-            grid.SetActive(isEnabled);
-        }
+        if (isEnabled && Input.GetButtonDown("Cancel"))
+            ToggleBuild();
 
         //If enabled, and If a tower is selected, and If the mouse isn't over a GUI element...
         if (isEnabled && currentTower && !EventSystem.current.IsPointerOverGameObject())
@@ -72,6 +65,20 @@ public class PlaceTowers : MonoBehaviour
                 }
             }
         }
+    }
+
+    void ToggleBuild()
+    {
+        isEnabled = !isEnabled;
+        Preferences.instance.canPlayerShoot = !isEnabled;
+
+        if (isEnabled)
+            ChangeCurrentTower(towerIndex);
+        else
+            ChangeCurrentTower(-1);
+
+        placementUI.SetActive(isEnabled);
+        grid.SetActive(isEnabled);
     }
 
     //Changes the currently selected tower (usually called from the GUI)

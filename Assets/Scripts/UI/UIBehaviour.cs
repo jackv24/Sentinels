@@ -68,5 +68,10 @@ public class UIBehaviour : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ReloadLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
     #endregion
 }

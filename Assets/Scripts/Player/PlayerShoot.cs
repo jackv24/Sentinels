@@ -16,7 +16,7 @@ public class PlayerShoot : MonoBehaviour
 	
 	void Update ()
     {
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0) && Preferences.instance.canPlayerShoot)
 		{
 			GameObject obj = (GameObject)Instantiate (Bullet, PlayerGunBullet.transform.position, PlayerGunBullet.transform.rotation);
 
