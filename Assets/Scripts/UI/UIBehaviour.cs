@@ -13,6 +13,12 @@ public class UIBehaviour : MonoBehaviour
         ClosePanels();
     }
 
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+            ClosePanels();
+    }
+
     #region options
     public void setMasterVolume(float value)
     {
@@ -49,6 +55,7 @@ public class UIBehaviour : MonoBehaviour
         foreach (GameObject panel in panels)
         {
             panel.SetActive(false);
+            lastPanelIndex = -1;
         }
     }
     #endregion
