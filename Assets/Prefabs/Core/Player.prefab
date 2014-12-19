@@ -98,9 +98,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400012}
-  - 114: {fileID: 11400000}
   - 143: {fileID: 14300000}
   - 81: {fileID: 8100000}
+  - 114: {fileID: 11400000}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400008}
@@ -970,19 +970,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecac4cf54f5d9da4f9d308628ef78ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  healthText: {fileID: 0}
   maxHealth: 100
   currentHealth: 100
-  resourcesText: {fileID: 0}
   currentResources: 100
-  xpBar: {fileID: 0}
-  xpText: {fileID: 0}
-  levelText: {fileID: 0}
   currentXP: 0
   levelXP: 1000
   currentLevel: 0
-  barAnimSmoothness: .25
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

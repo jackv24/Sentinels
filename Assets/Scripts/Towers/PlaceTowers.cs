@@ -22,10 +22,14 @@ public class PlaceTowers : MonoBehaviour
     //The current tower, to follow the mouse cursor over the grid for placement
     private GameObject currentTower;
 
+    private PlayerStats playerStats;
+
     void Start()
     {
         placementUI.SetActive(isEnabled);
         grid.SetActive(isEnabled);
+
+        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -54,7 +58,7 @@ public class PlaceTowers : MonoBehaviour
                     currentTower.transform.position = hitInfo.transform.position;
 
                     //When the player clicks the left mouse button, and there is enough resources...
-                    if (Input.GetMouseButton(0) && PlayerStats.instance.currentResources >= towers[towerIndex].cost)
+                    if (Input.GetMouseButton(0) && playerStats.currentResources >= towers[towerIndex].cost)
                     {
                         //Place the tower
                         PlaceTower(towers[towerIndex].prefab, hitInfo.transform.position, towers[towerIndex].cost);
@@ -132,7 +136,7 @@ public class PlaceTowers : MonoBehaviour
         //Set the node to occupied
         currentNode.isOccupied = true;
 
-        PlayerStats.instance.RemoveResources(cost);
+        playerStats.RemoveResources(cost);
     }
 }
 

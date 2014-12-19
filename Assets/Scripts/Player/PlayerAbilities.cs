@@ -17,6 +17,18 @@ public class PlayerAbilities : MonoBehaviour
     public GameObject gunMuzzle;
     public GameObject bulletPrefab;
 
+    private GameObject projectiles;
+
+    void Start()
+    {
+        //If the gameobject doesn't exist, create it
+        if (!GameObject.Find("Projectiles"))
+            projectiles = new GameObject("Projectiles");
+        //If the gameobject does exist, set it's reference
+        else
+            projectiles = GameObject.Find("Projectiles");
+    }
+
     void Update()
     {
         GetButtonInput();
@@ -104,6 +116,8 @@ public class PlayerAbilities : MonoBehaviour
         {
             GameObject obj = (GameObject)Instantiate(bullet, gunMuzzle.transform.position, gunMuzzle.transform.rotation);
             Physics.IgnoreCollision(gameObject.collider, obj.collider);
+
+            obj.transform.parent = projectiles.transform;
 
             return obj;
         }
