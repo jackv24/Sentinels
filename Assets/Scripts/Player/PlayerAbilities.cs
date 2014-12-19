@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class PlayerAbilities : MonoBehaviour {
-	public Abilities ability;
-		public enum Abilities
+	
+	public enum Abilities
 	{
 		NormalShoot,
 		MultiShot,
@@ -13,32 +14,90 @@ public class PlayerAbilities : MonoBehaviour {
 		SelfRepair,
 	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	  switch(ability)
-		{
-		case Abilities.NormalShoot: 
-				break;
-		case Abilities.MultiShot:
-			break;
+    public GameObject gunMuzzle;
+    public GameObject bulletPrefab;
 
-		case Abilities.Blink:
-			break;
+    void Update()
+    {
+        if (Input.GetButtonDown("Primary") && !EventSystem.current.IsPointerOverGameObject())
+            Use(Abilities.NormalShoot);
 
-		case Abilities.FreezingFire:
-			break;
+        if (Input.GetButtonDown("Secondary") && !EventSystem.current.IsPointerOverGameObject())
+            Use(Abilities.MultiShot);
 
-		case Abilities.RapidFire:
-			break;
+        if (Input.GetButtonDown("Ability1"))
+            Use(Abilities.Blink);
 
-		case Abilities.SelfRepair:
-			break;
-		}
-		
-	}
+        if (Input.GetButtonDown("Ability2"))
+            Use(Abilities.FreezingFire);
+
+        if (Input.GetButtonDown("Ability3"))
+            Use(Abilities.RapidFire);
+
+        if (Input.GetButtonDown("Ability4"))
+            Use(Abilities.SelfRepair);
+    }
+
+    public void Use(Abilities ability)
+    {
+        if (Preferences.instance.canPlayerShoot)
+        {
+            switch (ability)
+            {
+                case Abilities.NormalShoot:
+                    FireBullet(bulletPrefab);
+                    break;
+
+                case Abilities.MultiShot:
+                    FireBullet(bulletPrefab, 5, 30f);
+                    break;
+
+                case Abilities.Blink:
+                    Debug.Log("Blink");
+                    break;
+
+                case Abilities.FreezingFire:
+                    Debug.Log("FreezingFire");
+                    break;
+
+                case Abilities.RapidFire:
+                    Debug.Log("RapidFire");
+                    break;
+
+                case Abilities.SelfRepair:
+                    Debug.Log("SelfRepair");
+                    break;
+
+            }
+        }
+    }
+
+    GameObject FireBullet(GameObject bullet)
+    {
+        if (bullet && gunMuzzle)
+        {
+            GameObject obj = (GameObject)Instantiate(bullet, gunMuzzle.transform.position, gunMuzzle.transform.rotation);
+            Physics.IgnoreCollision(gameObject.collider, obj.collider);
+
+            return obj;
+        }
+        else
+        {
+            Debug.Log("Missing bullet prefab and/or muzzle transform!");
+            return null;
+        }
+    }
+
+    void FireBullet(GameObject bullet, int amount, float spreadAngle)
+    {
+        // Todo - need a special case for when amount is 1
+        float perBulletAngle = spreadAngle / (amount - 1);
+        float startAngle = spreadAngle * -0.5f;
+
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject obj = FireBullet(bullet);
+            obj.transform.Rotate(Vector3.up, startAngle + i * perBulletAngle);
+        }
+    }
 }

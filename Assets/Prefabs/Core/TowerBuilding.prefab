@@ -344,7 +344,7 @@ GameObject:
   - 224: {fileID: 22400040}
   - 114: {fileID: 11400044}
   m_Layer: 5
-  m_Name: Sh1tb0x
+  m_Name: FlameTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1636,11 +1636,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<b>SH1TB0X - 3000</b>
+  m_Text: '<b>Flame Turret</b>
 
     Cost: 15 Resources
 
-    (This was all Connor... I swear!)'
+'
 --- !u!119 &11900000
 Projector:
   m_ObjectHideFlags: 1

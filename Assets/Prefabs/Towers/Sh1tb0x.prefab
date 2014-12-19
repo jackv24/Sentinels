@@ -1931,8 +1931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 11400010}
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 500
+  currentHealth: 500
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
