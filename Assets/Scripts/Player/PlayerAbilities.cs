@@ -2,8 +2,8 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class PlayerAbilities : MonoBehaviour {
-	
+public class PlayerAbilities : MonoBehaviour
+{
 	public enum Abilities
 	{
 		NormalShoot,
@@ -18,6 +18,11 @@ public class PlayerAbilities : MonoBehaviour {
     public GameObject bulletPrefab;
 
     void Update()
+    {
+        GetButtonInput();
+    }
+
+    void GetButtonInput()
     {
         if (Input.GetButtonDown("Primary") && !EventSystem.current.IsPointerOverGameObject())
             Use(Abilities.NormalShoot);
@@ -38,7 +43,28 @@ public class PlayerAbilities : MonoBehaviour {
             Use(Abilities.SelfRepair);
     }
 
-    public void Use(Abilities ability)
+    public void GetUIInput(string button)
+    {
+        if (button == "Primary")
+            Use(Abilities.NormalShoot);
+
+        if (button == "Secondary")
+            Use(Abilities.MultiShot);
+
+        if (button == "Ability1")
+            Use(Abilities.Blink);
+
+        if (button == "Ability2")
+            Use(Abilities.FreezingFire);
+
+        if (button == "Ability3")
+            Use(Abilities.RapidFire);
+
+        if (button == "Ability4")
+            Use(Abilities.SelfRepair);
+    }
+
+    void Use(Abilities ability)
     {
         if (Preferences.instance.canPlayerShoot)
         {
