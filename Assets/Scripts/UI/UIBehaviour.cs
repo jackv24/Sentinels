@@ -6,6 +6,7 @@ public class UIBehaviour : MonoBehaviour
 {
     //Stores an array of panels - to be opened and closed
     public GameObject[] panels;
+    //Stores the index of the last open panel
     private int lastPanelIndex = -1;
 
     void Start()

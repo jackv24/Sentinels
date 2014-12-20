@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerAbilities : MonoBehaviour
 {
+    //enum to store all player abilities
 	public enum Abilities
 	{
 		NormalShoot,
@@ -14,9 +15,13 @@ public class PlayerAbilities : MonoBehaviour
 		SelfRepair,
 	}
 
-    public GameObject gunMuzzle;
+    //The transform from where the bullets are instantiated
+    public Transform gunMuzzle;
+
+    //The basic bullet to be instantiated
     public GameObject bulletPrefab;
 
+    //The gameobject to which all projectgiles will be parented (to clean up the heirarchy during runtime)
     private GameObject projectiles;
 
     void Start()
@@ -34,6 +39,7 @@ public class PlayerAbilities : MonoBehaviour
         GetButtonInput();
     }
 
+    //Gets input from buttons
     void GetButtonInput()
     {
         if (Input.GetButtonDown("Primary") && !EventSystem.current.IsPointerOverGameObject())
@@ -55,6 +61,7 @@ public class PlayerAbilities : MonoBehaviour
             Use(Abilities.SelfRepair);
     }
 
+    //Gets input from external call (from UI button)
     public void GetUIInput(string button)
     {
         if (button == "Primary")
@@ -76,49 +83,61 @@ public class PlayerAbilities : MonoBehaviour
             Use(Abilities.SelfRepair);
     }
 
+    //Use an ability
     void Use(Abilities ability)
     {
+        //If the player can shoot
         if (Preferences.instance.canPlayerShoot)
         {
+            //Call the corresponding ability's method
             switch (ability)
             {
                 case Abilities.NormalShoot:
-                    FireBullet(bulletPrefab);
+                    FireBullet(bulletPrefab); //Fire one bullet
                     break;
 
                 case Abilities.MultiShot:
-                    FireBullet(bulletPrefab, 5, 30f);
+                    FireBullet(bulletPrefab, 5, 30f); //Fire multiple bullets
                     break;
 
                 case Abilities.Blink:
-                    Debug.Log("Blink");
+                    Debug.Log("Blink"); //Call the blink method from here (once you have created it below, that is)
                     break;
 
                 case Abilities.FreezingFire:
-                    Debug.Log("FreezingFire");
+                    Debug.Log("FreezingFire"); //Call the freezing fire method
                     break;
 
                 case Abilities.RapidFire:
-                    Debug.Log("RapidFire");
+                    Debug.Log("RapidFire"); //Call the rapid fire method
                     break;
 
                 case Abilities.SelfRepair:
-                    Debug.Log("SelfRepair");
+                    Debug.Log("SelfRepair"); //Call the self repair method
                     break;
 
             }
         }
     }
 
+    #region ability_methods 
+
+    //Instantiates a bullet prefab, and returns it
     GameObject FireBullet(GameObject bullet)
     {
+        //If there is a bullet, and a place to fire from
         if (bullet && gunMuzzle)
         {
-            GameObject obj = (GameObject)Instantiate(bullet, gunMuzzle.transform.position, gunMuzzle.transform.rotation);
+            //Instantiate the bullet
+            GameObject obj = (GameObject)Instantiate(bullet, gunMuzzle.position, gunMuzzle.rotation);
+
+            //Ignore collisions between the player and the bullet
             Physics.IgnoreCollision(gameObject.collider, obj.collider);
 
+            //Set bullet parent to projectiles (for heirarchy cleanup)
             obj.transform.parent = projectiles.transform;
 
+            //Return the bullet
             return obj;
         }
         else
@@ -128,16 +147,22 @@ public class PlayerAbilities : MonoBehaviour
         }
     }
 
+    //Overloaded method to fire multiple bullets in a spread
     void FireBullet(GameObject bullet, int amount, float spreadAngle)
     {
-        // Todo - need a special case for when amount is 1
+        //Calculates the angle between each bullet, based on the spreadAngle
         float perBulletAngle = spreadAngle / (amount - 1);
         float startAngle = spreadAngle * -0.5f;
 
+        //For the amount specified...
         for (int i = 0; i < amount; i++)
         {
+            //Fire a bullet
             GameObject obj = FireBullet(bullet);
+            //Rotate the fired bullet to spread out
             obj.transform.Rotate(Vector3.up, startAngle + i * perBulletAngle);
         }
     }
+
+    #endregion
 }

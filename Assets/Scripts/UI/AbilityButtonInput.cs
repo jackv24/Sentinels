@@ -4,27 +4,33 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Button))]
-public class UIButtonInput : MonoBehaviour
+public class AbilityButtonInput : MonoBehaviour
 {
+    //The input button that this button must simulate
     public string inputButton = "AbilityX";
 
+    //Hold a reference to PlayerAbilities
     private PlayerAbilities playerAbilities;
 
     private Button button;
 
     void Start()
     {
+        //Set playerAbilities reference to that of the player
         playerAbilities = GameObject.FindWithTag("Player").GetComponent<PlayerAbilities>();
 
+        //The button component that should be attached to this gameobject
         button = GetComponent<Button>();
     }
 
     void Update()
     {
+        //If a mouse button is clicked over a GUI object, do nothing.
         if (inputButton == "Primary" || inputButton == "Secondary")
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
+        //If the key for this gui button is pressed, reflect that by disabling and enabling the button
         if (Input.GetButton(inputButton))
             button.interactable = false;
         else
@@ -33,6 +39,7 @@ public class UIButtonInput : MonoBehaviour
 
     public void PressButton()
     {
+        //Send button press to playerAbilities
         playerAbilities.GetUIInput(inputButton);
     }
 }

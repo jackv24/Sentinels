@@ -987,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751ff67f123ffd046b6f8e14beacd7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunMuzzle: {fileID: 100024}
+  gunMuzzle: {fileID: 400024}
   bulletPrefab: {fileID: 100000, guid: 90408b726a8129340997530e533ff641, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:

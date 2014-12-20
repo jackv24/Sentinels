@@ -62,11 +62,11 @@
      <Compile Include="Assets\Scripts\Towers\PlaceTowers.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerStats.cs" />
      <Compile Include="Assets\Scripts\Towers\Turret.cs" />
+     <Compile Include="Assets\Scripts\UI\AbilityButtonInput.cs" />
      <Compile Include="Assets\Scripts\UI\Billboard.cs" />
      <Compile Include="Assets\Scripts\UI\DisplayPlayerStats.cs" />
      <Compile Include="Assets\Scripts\UI\SliderValue.cs" />
      <Compile Include="Assets\Scripts\UI\UIBehaviour.cs" />
-     <Compile Include="Assets\Scripts\UI\UIButtonInput.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
