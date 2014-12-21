@@ -14,7 +14,7 @@ public class PlayerAbilities : MonoBehaviour
 		RapidFire,
 		SelfRepair,
 	}
-
+    
     //The transform from where the bullets are instantiated
     public Transform gunMuzzle;
 
@@ -24,6 +24,8 @@ public class PlayerAbilities : MonoBehaviour
     //The gameobject to which all projectgiles will be parented (to clean up the heirarchy during runtime)
     private GameObject projectiles;
 
+    private PlayerStats playerStats;
+
     void Start()
     {
         //If the gameobject doesn't exist, create it
@@ -32,6 +34,8 @@ public class PlayerAbilities : MonoBehaviour
         //If the gameobject does exist, set it's reference
         else
             projectiles = GameObject.Find("Projectiles");
+
+        playerStats = GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -97,7 +101,13 @@ public class PlayerAbilities : MonoBehaviour
                     break;
 
                 case Abilities.MultiShot:
-                    FireBullet(bulletPrefab, 5, 30f); //Fire multiple bullets
+                    int cost = 10; //How much energy does this ability cost to use?
+
+                    if (playerStats.currentEnergy >= cost) //If there is enough energy...
+                    {
+                        FireBullet(bulletPrefab, 5, 30f); //Fire multiple bullets
+                        playerStats.RemoveEnergy(cost);
+                    }
                     break;
 
                 case Abilities.Blink:

@@ -4,11 +4,17 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    //Health variables
     public int maxHealth = 100; 
     public int currentHealth = 100;
 
+    //Health variables
+    public int maxEnergy = 100;
+    public int currentEnergy = 100;
+
     public int currentResources = 100;
 
+    //Xp variables
     public int currentXP = 0;
     public int levelXP = 1000;
     public int currentLevel = 0;
@@ -20,7 +26,8 @@ public class PlayerStats : MonoBehaviour
             AddXP(110);
     }
 
-    //Public functions for adding and removing health and resources
+    #region edit_stats
+    //Public functions for adding and removing health
     public void AddHealth(int amount)
     {
         currentHealth += amount;
@@ -37,6 +44,24 @@ public class PlayerStats : MonoBehaviour
             currentHealth = 0;
     }
 
+    //...energy
+    public void AddEnergy(int amount)
+    {
+        currentEnergy += amount;
+
+        if (currentEnergy > maxEnergy)
+            currentEnergy = maxEnergy;
+    }
+
+    public void RemoveEnergy(int amount)
+    {
+        currentEnergy -= amount;
+
+        if (currentEnergy < 0)
+            currentEnergy = 0;
+    }
+
+    //...and resources
     public void AddResources(int amount)
     {
         currentResources += amount;
@@ -69,4 +94,5 @@ public class PlayerStats : MonoBehaviour
         if (currentXP < 0)
             currentXP = 0;
     }
+    #endregion
 }

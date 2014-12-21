@@ -9,6 +9,11 @@ public class DisplayPlayerStats : MonoBehaviour
     public Text healthText; //The text within the slider that will display health as text
     private string healthTextString; //Stores inital text value, so string.Format() can be used on text added in inspector
 
+    //Energy variables
+    public Slider energyBar;
+    public Text energyText;
+    private string energyTextString;
+
     //Resource variables
     public Text resourcesText;
     private string resourcesTextString;
@@ -30,6 +35,8 @@ public class DisplayPlayerStats : MonoBehaviour
         //Store initial text values
         if (healthText)
             healthTextString = healthText.text;
+        if (energyText)
+            energyTextString = energyText.text;
         if (resourcesText)
             resourcesTextString = resourcesText.text;
         if (xpText)
@@ -49,15 +56,18 @@ public class DisplayPlayerStats : MonoBehaviour
             //Replace '{0}' and '{1}' in text with playerStats.current health and max health
             healthText.text = string.Format(healthTextString, playerStats.currentHealth, playerStats.maxHealth);
 
+        if (energyBar)
+            energyBar.value = Mathf.Lerp(energyBar.value, (float)playerStats.currentEnergy / playerStats.maxEnergy, barAnimSmoothness);
+        if (energyText)
+            energyText.text = string.Format(energyTextString, playerStats.currentEnergy, playerStats.maxEnergy);
+
         if (resourcesText)
             //Set resources text with playerStats.current value
             resourcesText.text = string.Format(resourcesTextString, playerStats.currentResources);
 
         if (xpBar)
-            //Set xp slider value to xp value (0-1)
             xpBar.value = Mathf.Lerp(xpBar.value, (float)playerStats.currentXP / playerStats.levelXP, barAnimSmoothness);
         if (xpText)
-            //Replace '{0}' and '{1}' in text with playerStats.current health and max health
             xpText.text = string.Format(xpTextString, playerStats.currentXP, playerStats.levelXP);
 
         if (levelText)
