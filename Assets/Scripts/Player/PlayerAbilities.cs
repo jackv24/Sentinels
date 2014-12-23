@@ -14,7 +14,9 @@ public class PlayerAbilities : MonoBehaviour
 		RapidFire,
 		SelfRepair,
 	}
-    
+
+	public LayerMask layerMask;
+
     //The transform from where the bullets are instantiated
     public Transform gunMuzzle;
 
@@ -68,6 +70,7 @@ public class PlayerAbilities : MonoBehaviour
     //Use an ability
     void Use(Abilities ability)
     {
+		int cost = 0;
         //If the player can shoot
         if (Preferences.instance.canPlayerShoot)
         {
@@ -79,7 +82,7 @@ public class PlayerAbilities : MonoBehaviour
                     break;
 
                 case Abilities.MultiShot:
-                    int cost = 10; //How much energy does this ability cost to use?
+			        cost = 10; //How much energy does this ability cost to use?
 
                     if (playerStats.currentEnergy >= cost) //If there is enough energy...
                     {
@@ -89,8 +92,14 @@ public class PlayerAbilities : MonoBehaviour
                     break;
 
                 case Abilities.Blink:
-                    Debug.Log("Blink"); //Call the blink method from here (once you have created it below, that is)
-                    break;
+					cost = 30; //How much energy does this ability cost to use?
+					
+					if (playerStats.currentEnergy >= cost) //If there is enough energy...
+					{
+						Blink();
+						playerStats.RemoveEnergy(cost);
+					}
+					break;
 
                 case Abilities.FreezingFire:
                     Debug.Log("FreezingFire"); //Call the freezing fire method
@@ -151,6 +160,19 @@ public class PlayerAbilities : MonoBehaviour
             obj.transform.Rotate(Vector3.up, startAngle + i * perBulletAngle);
         }
     }
+
+	void Blink()
+	{
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hitInfo;
+		if(Physics.Raycast(ray, out hitInfo, 1000f, layerMask) && !Preferences.instance.isGamePaused)
+		{
+			//  Adjust target position's Y
+			Vector3 target = hitInfo.point;
+			target.y = transform.position.y;
+			transform.position = target;
+		}
+	}
 
     #endregion
 }
