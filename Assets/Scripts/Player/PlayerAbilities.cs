@@ -65,28 +65,6 @@ public class PlayerAbilities : MonoBehaviour
             Use(Abilities.SelfRepair);
     }
 
-    //Gets input from external call (from UI button)
-    public void GetUIInput(string button)
-    {
-        if (button == "Primary")
-            Use(Abilities.NormalShoot);
-
-        if (button == "Secondary")
-            Use(Abilities.MultiShot);
-
-        if (button == "Ability1")
-            Use(Abilities.Blink);
-
-        if (button == "Ability2")
-            Use(Abilities.FreezingFire);
-
-        if (button == "Ability3")
-            Use(Abilities.RapidFire);
-
-        if (button == "Ability4")
-            Use(Abilities.SelfRepair);
-    }
-
     //Use an ability
     void Use(Abilities ability)
     {

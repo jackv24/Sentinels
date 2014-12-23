@@ -19,6 +19,12 @@ public class PlayerStats : MonoBehaviour
     public int levelXP = 1000;
     public int currentLevel = 0;
 
+    void Start()
+    {
+        StartCoroutine(RegenerateHealth());
+        StartCoroutine(RegenerateEnergy());
+    }
+
     void Update()
     {
         //For testing purposes
@@ -95,4 +101,24 @@ public class PlayerStats : MonoBehaviour
             currentXP = 0;
     }
     #endregion
+
+    IEnumerator RegenerateHealth()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+
+            AddHealth(1);
+        }
+    }
+
+    IEnumerator RegenerateEnergy()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.25f);
+
+            AddEnergy(1);
+        }
+    }
 }

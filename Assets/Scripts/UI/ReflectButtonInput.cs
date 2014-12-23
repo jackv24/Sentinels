@@ -4,21 +4,15 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Button))]
-public class AbilityButtonInput : MonoBehaviour
+public class ReflectButtonInput : MonoBehaviour
 {
     //The input button that this button must simulate
     public string inputButton = "AbilityX";
-
-    //Hold a reference to PlayerAbilities
-    private PlayerAbilities playerAbilities;
 
     private Button button;
 
     void Start()
     {
-        //Set playerAbilities reference to that of the player
-        playerAbilities = GameObject.FindWithTag("Player").GetComponent<PlayerAbilities>();
-
         //The button component that should be attached to this gameobject
         button = GetComponent<Button>();
     }
@@ -35,11 +29,5 @@ public class AbilityButtonInput : MonoBehaviour
             button.interactable = false;
         else
             button.interactable = true;
-    }
-
-    public void PressButton()
-    {
-        //Send button press to playerAbilities
-        playerAbilities.GetUIInput(inputButton);
     }
 }
