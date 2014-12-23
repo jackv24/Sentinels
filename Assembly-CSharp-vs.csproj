@@ -46,8 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\Testing\Test_Scripts\EnemyNavMesh.cs" />
-     <Compile Include="Assets\Scenes\Testing\Test_Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyNavMesh.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
      <Compile Include="Assets\Scripts\Managers\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Managers\Preferences.cs" />
