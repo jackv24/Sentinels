@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour
 {
 	public GameObject Enemy;
+	public GameObject EnemyLvl2;
     public float EnemySpawn = 100f;
 
 	// Use this for initialization
@@ -26,6 +27,10 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject Spawn = Instantiate(Enemy, transform.position, transform.rotation) as GameObject;
             }
+			else
+			{
+				GameObject Spawn = Instantiate (EnemyLvl2, transform.position, transform.rotation) as GameObject;
+			}
 
             EnemySpawn = 100f;
         }
