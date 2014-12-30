@@ -7240,8 +7240,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1378611248}
   - 114: {fileID: 1378611247}
+  - 195: {fileID: 1378611249}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: End
   m_TagString: Finish
   m_Icon: {fileID: 664873902, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7270,6 +7271,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!195 &1378611249
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1378611246}
+  m_Enabled: 1
+  m_Radius: .5
+  m_Speed: 0
+  m_Acceleration: 0
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1384227126
 GameObject:
   m_ObjectHideFlags: 0

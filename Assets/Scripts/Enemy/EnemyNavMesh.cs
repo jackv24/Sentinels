@@ -18,10 +18,5 @@ public class EnemyNavMesh : MonoBehaviour
 		Target = GameObject.FindGameObjectWithTag ("Finish").transform;
 		navMeshAgent = GetComponent <NavMeshAgent> ();
 		navMeshAgent.SetDestination (Target.transform.position);
-	}
-
-	void OnCollisionEnter (Collision other)
-	{
-
-	}
+	}	
 }
