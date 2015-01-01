@@ -13,15 +13,12 @@ public class LookAt : MonoBehaviour {
 		//  Cast a ray from the screen into the world
 		Ray ray = Camera.main.ScreenPointToRay(mouse);
 		RaycastHit hitInfo;
-		if(Physics.Raycast(ray, out hitInfo, 1000f, Mask) && !Preferences.instance.isGamePaused)
+		if(Physics.Raycast(ray, out hitInfo, 1000f, Mask) && Preferences.instance.gameState != Preferences.GameState.Paused)
 		{
 			//  Adjust target position's Y
 			Vector3 target = hitInfo.point;
 			target.y = transform.position.y;
 			transform.LookAt(target);
 		}
-		
-	
-		
 	}
 }

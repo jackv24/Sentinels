@@ -34,7 +34,7 @@ public class PlaceTowers : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("ToggleBuild") && !Preferences.instance.isGamePaused)
+        if (Input.GetButtonDown("ToggleBuild") && Preferences.instance.gameState != Preferences.GameState.Paused)
             ToggleBuild();
 
         if (isEnabled && Input.GetButtonDown("Cancel"))
@@ -73,8 +73,16 @@ public class PlaceTowers : MonoBehaviour
 
     void ToggleBuild()
     {
-        isEnabled = !isEnabled;
-        Preferences.instance.canPlayerShoot = !isEnabled;
+        if (isEnabled)
+        {
+            isEnabled = false;
+            Preferences.instance.gameState = Preferences.GameState.Running;
+        }
+        else
+        {
+            isEnabled = true;
+            Preferences.instance.gameState = Preferences.GameState.Building;
+        }
 
         if (isEnabled)
             ChangeCurrentTower(towerIndex);

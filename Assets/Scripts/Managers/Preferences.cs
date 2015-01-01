@@ -3,16 +3,21 @@ using System.Collections;
 
 public class Preferences : MonoBehaviour
 {
+    public enum GameState
+    {
+        Running,
+        Building,
+        Paused
+    }
+
+    public GameState gameState = GameState.Running;
+
     //Static instance, for easy access without using GetComponent()
     public static Preferences instance;
 
     public float masterVolume = 1f;
     public float musicVolume = 1f;
     public float soundVolume = 1f;
-
-    public bool canPlayerShoot = true;
-
-    public bool isGamePaused = false;
 
     void Start()
     {

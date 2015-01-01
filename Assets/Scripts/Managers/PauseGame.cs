@@ -12,7 +12,9 @@ public class PauseGame : MonoBehaviour
     void Start()
     {
         //Sets isGamePaused to the universal game pause state
-        isGamePaused = Preferences.instance.isGamePaused;
+        if(Preferences.instance.gameState == Preferences.GameState.Paused)
+            isGamePaused = true;
+
         //Sets the pausemenu active state accordingly
         pauseMenu.SetActive(isGamePaused);
     }
@@ -39,9 +41,9 @@ public class PauseGame : MonoBehaviour
         pauseMenu.SetActive(isGamePaused);
 
         //Set universal pause state
-        Preferences.instance.isGamePaused = isGamePaused;
-
-        //Set if player can shoot (seperate from game pause to stop player shooting in menus)
-        Preferences.instance.canPlayerShoot = !isGamePaused;
+        if (isGamePaused)
+            Preferences.instance.gameState = Preferences.GameState.Paused;
+        else
+            Preferences.instance.gameState = Preferences.GameState.Running;
     }
 }

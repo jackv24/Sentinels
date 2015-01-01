@@ -5,4 +5,9 @@ public class GridNode : MonoBehaviour
 {
     //Is the node occupied?
     public bool isOccupied = false;
+
+    void Start()
+    {
+
+    }
 }

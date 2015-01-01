@@ -42,7 +42,8 @@ public class PlayerAbilities : MonoBehaviour
 
     void Update()
     {
-        GetButtonInput();
+        if(Preferences.instance.gameState == Preferences.GameState.Running)
+            GetButtonInput();
     }
 
     //Gets input from buttons
@@ -72,7 +73,7 @@ public class PlayerAbilities : MonoBehaviour
     {
 		int cost = 0;
         //If the player can shoot
-        if (Preferences.instance.canPlayerShoot)
+        if (Preferences.instance.gameState == Preferences.GameState.Running)
         {
             //Call the corresponding ability's method
             switch (ability)
@@ -165,7 +166,7 @@ public class PlayerAbilities : MonoBehaviour
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hitInfo;
-		if(Physics.Raycast(ray, out hitInfo, 1000f, layerMask) && !Preferences.instance.isGamePaused)
+        if (Physics.Raycast(ray, out hitInfo, 1000f, layerMask) && Preferences.instance.gameState == Preferences.GameState.Running)
 		{
 			//  Adjust target position's Y
 			Vector3 target = hitInfo.point;

@@ -19,15 +19,18 @@ public class ReflectButtonInput : MonoBehaviour
 
     void Update()
     {
-        //If a mouse button is clicked over a GUI object, do nothing.
-        if (inputButton == "Primary" || inputButton == "Secondary")
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
+        if (Preferences.instance.gameState == Preferences.GameState.Running)
+        {
+            //If a mouse button is clicked over a GUI object, do nothing.
+            if (inputButton == "Primary" || inputButton == "Secondary")
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
 
-        //If the key for this gui button is pressed, reflect that by disabling and enabling the button
-        if (Input.GetButton(inputButton))
-            button.interactable = false;
-        else
-            button.interactable = true;
+            //If the key for this gui button is pressed, reflect that by disabling and enabling the button
+            if (Input.GetButton(inputButton))
+                button.interactable = false;
+            else
+                button.interactable = true;
+        }
     }
 }
