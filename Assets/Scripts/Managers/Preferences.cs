@@ -6,7 +6,7 @@ public class Preferences : MonoBehaviour
     public enum GameState
     {
         Running,
-        Building,
+        Menu,
         Paused
     }
 

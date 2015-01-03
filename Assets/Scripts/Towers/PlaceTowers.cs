@@ -81,7 +81,7 @@ public class PlaceTowers : MonoBehaviour
         else
         {
             isEnabled = true;
-            Preferences.instance.gameState = Preferences.GameState.Building;
+            Preferences.instance.gameState = Preferences.GameState.Menu;
         }
 
         if (isEnabled)

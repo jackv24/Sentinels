@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 /* Reads in mouse input, and therefore orbits the camera based on that input. */
 
@@ -22,11 +23,13 @@ public class CameraFollow : MonoBehaviour
             return;
 
         //Zoom
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
-            distance -= CameraZoomSpeed * Time.deltaTime;
-        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
-            distance += CameraZoomSpeed * Time.deltaTime;
-
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+                distance -= CameraZoomSpeed * Time.deltaTime;
+            else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+                distance += CameraZoomSpeed * Time.deltaTime;
+        }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
 
         transform.position = target.position;
