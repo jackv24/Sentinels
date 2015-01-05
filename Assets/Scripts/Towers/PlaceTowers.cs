@@ -127,6 +127,7 @@ public class PlaceTowers : MonoBehaviour
     {
         //Spawns the tower
         GameObject tower = (GameObject)Instantiate(towerPrefab, position, Quaternion.identity);
+        tower.name = towerPrefab.name;
 
         //Creates a reference to a gameobject
         GameObject towers;
@@ -142,7 +143,7 @@ public class PlaceTowers : MonoBehaviour
         tower.transform.parent = towers.transform;
 
         //Set the node to occupied
-        currentNode.isOccupied = true;
+        currentNode.tower = tower;
 
         playerStats.RemoveResources(cost);
     }

@@ -1888,7 +1888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 53380ee677f6cdb42974fbbf6ae92ec2, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2596,12 +2596,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84acc6c6d3eca042b740a8361c770e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeUI: {fileID: 100062}
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
+  isEnabled: 0
   nameText: {fileID: 11430876}
   towerImage: {fileID: 11400056}
   healthSlider: {fileID: 11430872}
+  healthText: {fileID: 11430864}
   xpSlider: {fileID: 11430870}
+  xpText: {fileID: 11430860}
   levelSlider: {fileID: 11430854}
+  levelText: {fileID: 11430858}
   nextLevelText: {fileID: 11464400}
+  barAnimSmoothness: .25
 --- !u!114 &11464400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2627,7 +2636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Next Level:\n\t+100HP\n\t+50% Fire Rate"
+  m_Text: "Next Level:\n\t+Stuff\n\t+More Stuff"
 --- !u!114 &11473566
 MonoBehaviour:
   m_ObjectHideFlags: 1
