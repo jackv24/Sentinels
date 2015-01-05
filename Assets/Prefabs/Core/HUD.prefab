@@ -712,7 +712,6 @@ GameObject:
   - 224: {fileID: 22436684}
   - 222: {fileID: 22236684}
   - 114: {fileID: 11436674}
-  - 114: {fileID: 11436676}
   m_Layer: 5
   m_Name: Tooltip
   m_TagString: Untagged
@@ -798,7 +797,6 @@ GameObject:
   - 224: {fileID: 22436694}
   - 222: {fileID: 22236694}
   - 114: {fileID: 11436690}
-  - 114: {fileID: 11436688}
   m_Layer: 5
   m_Name: Tooltip
   m_TagString: Untagged
@@ -816,7 +814,6 @@ GameObject:
   - 224: {fileID: 22436696}
   - 222: {fileID: 22236696}
   - 114: {fileID: 11436694}
-  - 114: {fileID: 11436696}
   m_Layer: 5
   m_Name: Tooltip
   m_TagString: Untagged
@@ -1051,7 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .690196097, g: .184313729, b: .152941182, a: 1}
+  m_Color: {r: .686274529, g: .180392161, b: .156862751, a: 1}
   m_Sprite: {fileID: 21300000, guid: 756ddfbc1720491408fdcee1a75bb03d, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1072,7 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .937254906, g: .352941185, b: .156862751, a: 1}
+  m_Color: {r: .933333337, g: .247058824, b: .211764708, a: 1}
   m_Sprite: {fileID: 21300000, guid: 756ddfbc1720491408fdcee1a75bb03d, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1097,7 +1094,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 14
-    m_FontStyle: 3
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -1181,7 +1178,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 14
-    m_FontStyle: 3
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -1207,7 +1204,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 11
-    m_FontStyle: 3
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -2284,7 +2281,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08f42f4d6c6dddb4e8459cad7fc17c17, type: 3}
     m_FontSize: 22
-    m_FontStyle: 3
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -2358,7 +2355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+  m_Color: {r: .375, g: .375, b: .375, a: .349019617}
   m_Sprite: {fileID: 21300000, guid: f3f8ba264b6424342ac8d8f152dc0bf2, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2367,20 +2364,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11436676
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: .0784313753}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &11436678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2425,7 +2408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+  m_Color: {r: .375, g: .375, b: .375, a: .349019617}
   m_Sprite: {fileID: 21300000, guid: b1cefa717e3ec0b45b061ccdce9fbae4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2494,7 +2477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+  m_Color: {r: .375, g: .375, b: .375, a: .349019617}
   m_Sprite: {fileID: 21300000, guid: b1cefa717e3ec0b45b061ccdce9fbae4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2535,20 +2518,6 @@ MonoBehaviour:
 
 
     Energy Cost: 10'
---- !u!114 &11436688
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: .0784313753}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &11436690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2561,7 +2530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+  m_Color: {r: .375, g: .375, b: .375, a: .349019617}
   m_Sprite: {fileID: 21300000, guid: f3f8ba264b6424342ac8d8f152dc0bf2, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2630,7 +2599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+  m_Color: {r: .375, g: .375, b: .375, a: .349019617}
   m_Sprite: {fileID: 21300000, guid: f3f8ba264b6424342ac8d8f152dc0bf2, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2639,20 +2608,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11436696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: .0784313753}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &11436698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2697,7 +2652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+  m_Color: {r: .375, g: .375, b: .375, a: .349019617}
   m_Sprite: {fileID: 21300000, guid: b1cefa717e3ec0b45b061ccdce9fbae4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0

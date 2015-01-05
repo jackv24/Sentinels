@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Towers\PlaceTowers.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerStats.cs" />
      <Compile Include="Assets\Scripts\Towers\Turret.cs" />
+     <Compile Include="Assets\Scripts\Towers\UpgradeTowers.cs" />
      <Compile Include="Assets\Scripts\UI\Billboard.cs" />
      <Compile Include="Assets\Scripts\UI\DisplayPlayerStats.cs" />
      <Compile Include="Assets\Scripts\UI\ReflectButtonInput.cs" />
