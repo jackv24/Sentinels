@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class TowerStats : MonoBehaviour
 {
+    public int resourcesCost = 10;
+
     //Health Variables
     public Slider healthBar; //The slider that will display health
 
@@ -13,8 +15,8 @@ public class TowerStats : MonoBehaviour
     public int currentXP = 0;
     public int levelXP = 1000;
 
-    public int currentLevel = 0;
-    public int maxLevel = 0;
+    public int currentLevel = 1;
+    public int maxLevel = 1;
 
     void Update()
     {

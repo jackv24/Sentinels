@@ -10,11 +10,13 @@ public class PlaceTowers : MonoBehaviour
     //Can the player place towers?
     public bool isEnabled = false;
 
+    public Color selectColour;
+
     //The layer on which towers can be placed
     public LayerMask layer;
 
     //The tower prefab to instantiate
-    public Tower[] towers;
+    public GameObject[] towers;
     private int towerIndex = 0;
 
     private GridNode currentNode;
@@ -58,10 +60,10 @@ public class PlaceTowers : MonoBehaviour
                     currentTower.transform.position = hitInfo.transform.position;
 
                     //When the player clicks the left mouse button, and there is enough resources...
-                    if (Input.GetMouseButton(0) && playerStats.currentResources >= towers[towerIndex].cost)
+                    if (Input.GetMouseButton(0) && playerStats.currentResources >= towers[towerIndex].GetComponent<TowerStats>().resourcesCost)
                     {
                         //Place the tower
-                        PlaceTower(towers[towerIndex].prefab, hitInfo.transform.position, towers[towerIndex].cost);
+                        PlaceTower(towers[towerIndex], hitInfo.transform.position, towers[towerIndex].GetComponent<TowerStats>().resourcesCost);
 
                         //Move the current tower out of view
                         currentTower.transform.position = Vector3.up * 100;
@@ -107,7 +109,7 @@ public class PlaceTowers : MonoBehaviour
             towerIndex = index;
 
             //Spawn the placement tower
-            currentTower = (GameObject)Instantiate(towers[towerIndex].prefab, Vector3.up * 100, Quaternion.identity);
+            currentTower = (GameObject)Instantiate(towers[towerIndex], Vector3.up * 100, Quaternion.identity);
             //Disable script - this is a placement dummy
             currentTower.GetComponent<Turret>().enabled = false;
 
@@ -117,7 +119,7 @@ public class PlaceTowers : MonoBehaviour
             //Tint the object green
             foreach (Component comp in comps)
             {
-                comp.renderer.material.color = Color.green;
+                comp.renderer.material.color += selectColour;
             }
         }
     }
@@ -147,12 +149,4 @@ public class PlaceTowers : MonoBehaviour
 
         playerStats.RemoveResources(cost);
     }
-}
-
-//Used for storing tower data in the inspector
-[System.Serializable]
-public class Tower
-{
-    public GameObject prefab;
-    public int cost;
 }

@@ -1849,14 +1849,13 @@ MonoBehaviour:
   placementUI: {fileID: 130892}
   grid: {fileID: 100066}
   isEnabled: 0
+  selectColour: {r: .470588237, g: .286043823, b: .286043823, a: 0}
   layer:
     serializedVersion: 2
     m_Bits: 256
   towers:
-  - prefab: {fileID: 100000, guid: bfd8f2787e38ea24a994e6b424b092e8, type: 2}
-    cost: 10
-  - prefab: {fileID: 100000, guid: be006a59c7c31534d829240a7ae00201, type: 2}
-    cost: 15
+  - {fileID: 100000, guid: bfd8f2787e38ea24a994e6b424b092e8, type: 2}
+  - {fileID: 100000, guid: be006a59c7c31534d829240a7ae00201, type: 2}
 --- !u!114 &11400054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2601,6 +2600,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isEnabled: 0
+  selectColour: {r: .286043823, g: .470588237, b: .308662087, a: 0}
   nameText: {fileID: 11430876}
   towerImage: {fileID: 11400056}
   healthSlider: {fileID: 11430872}
@@ -2789,7 +2789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11473576}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11451208}
+        m_MethodName: RepairTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11473576
