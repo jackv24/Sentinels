@@ -1839,6 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087b6788cbf4ba9428369307cc69ca96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourcesCost: 15
   healthBar: {fileID: 11429724}
   maxHealth: 500
   currentHealth: 500

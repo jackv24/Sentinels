@@ -658,11 +658,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087b6788cbf4ba9428369307cc69ca96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourcesCost: 10
   healthBar: {fileID: 11400004}
   maxHealth: 300
   currentHealth: 300
   currentXP: 0
-  levelXP: 1000
+  levelXP: 600
   currentLevel: 1
   maxLevel: 1
 --- !u!135 &13500000

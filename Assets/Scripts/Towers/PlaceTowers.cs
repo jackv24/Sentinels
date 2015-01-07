@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlaceTowers : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class PlaceTowers : MonoBehaviour
     //The layer on which towers can be placed
     public LayerMask layer;
 
+    public GameObject towerTogglePrefab;
+    public Transform toggleList;
+
     //The tower prefab to instantiate
     public GameObject[] towers;
     private int towerIndex = 0;
@@ -28,6 +32,8 @@ public class PlaceTowers : MonoBehaviour
 
     void Start()
     {
+        PopulateTowerList();
+
         placementUI.SetActive(isEnabled);
         grid.SetActive(isEnabled);
 
@@ -43,7 +49,7 @@ public class PlaceTowers : MonoBehaviour
             ToggleBuild();
 
         //If enabled, and If a tower is selected, and If the mouse isn't over a GUI element...
-        if (isEnabled && currentTower && !EventSystem.current.IsPointerOverGameObject())
+        if (isEnabled && currentTower)
         {
             //Ray to be cast from the mouse outward
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -54,7 +60,7 @@ public class PlaceTowers : MonoBehaviour
                 currentNode = hitInfo.collider.gameObject.GetComponent<GridNode>();
 
                 //If the node is not occupied...
-                if (!currentNode.isOccupied)
+                if (!currentNode.isOccupied && !EventSystem.current.IsPointerOverGameObject())
                 {
                     //Set the position of the current tower to the grid tile position
                     currentTower.transform.position = hitInfo.transform.position;
@@ -70,6 +76,31 @@ public class PlaceTowers : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    void PopulateTowerList()
+    {
+        for(int i = 0; i < towers.Length; i++)
+        {
+            GameObject buttonObj = (GameObject)Instantiate(towerTogglePrefab);
+            buttonObj.transform.SetParent(toggleList, false);
+            buttonObj.name = towers[i].name + "Toggle";
+
+            RectTransform rect = buttonObj.GetComponent<RectTransform>();
+            rect.localPosition = new Vector3(0, rect.rect.height * -i, 0);
+
+            Text text = buttonObj.transform.FindChild("Label").GetComponent<Text>();
+            text.text = string.Format(text.text, towers[i].GetComponent<TowerStats>().resourcesCost);
+
+            Image image = buttonObj.transform.FindChild("Image").GetComponent<Image>();
+            image.sprite = Resources.Load<Sprite>("Sprites/" + towers[i].name);
+
+            Button button = buttonObj.GetComponent<Button>();
+            button.onClick.RemoveAllListeners();
+
+            int j = i;
+            button.onClick.AddListener(() => ChangeCurrentTower(j));
         }
     }
 
@@ -98,9 +129,14 @@ public class PlaceTowers : MonoBehaviour
     //Changes the currently selected tower (usually called from the GUI)
     public void ChangeCurrentTower(int index)
     {
+        Vector3 pos = Vector3.up * 100;
+
         //If a tower is already selected, destroy it (the placement dummy)
         if (currentTower)
+        {
+            pos = currentTower.transform.position;
             Destroy(currentTower);
+        }
 
         //If there is a prefab with that index...
         if (index < towers.Length && index >= 0)
@@ -109,7 +145,7 @@ public class PlaceTowers : MonoBehaviour
             towerIndex = index;
 
             //Spawn the placement tower
-            currentTower = (GameObject)Instantiate(towers[towerIndex], Vector3.up * 100, Quaternion.identity);
+            currentTower = (GameObject)Instantiate(towers[towerIndex], pos, Quaternion.identity);
             //Disable script - this is a placement dummy
             currentTower.GetComponent<Turret>().enabled = false;
 
