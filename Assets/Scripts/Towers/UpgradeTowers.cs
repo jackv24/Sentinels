@@ -143,7 +143,7 @@ public class UpgradeTowers : MonoBehaviour
         towerSprite = Resources.Load<Sprite>("Sprites/" + tower.name);
 
         //Set the name text to the name of the tower
-        nameText.text = tower.name;
+        nameText.text = Helper.SplitCamelCase(tower.name);
         //Set the tower image to the towerSprite
         towerImage.sprite = towerSprite;
     }
