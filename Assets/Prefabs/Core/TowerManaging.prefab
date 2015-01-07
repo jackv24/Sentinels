@@ -58,8 +58,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22400006}
-  - 114: {fileID: 11400042}
   - 114: {fileID: 11408664}
+  - 114: {fileID: 11471730}
   m_Layer: 0
   m_Name: Content
   m_TagString: Untagged
@@ -484,7 +484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &164400
 GameObject:
   m_ObjectHideFlags: 1
@@ -760,18 +760,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &11400042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1184210157, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 0
 --- !u!114 &11400050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -816,6 +804,7 @@ MonoBehaviour:
   towers:
   - {fileID: 100000, guid: bfd8f2787e38ea24a994e6b424b092e8, type: 2}
   - {fileID: 100000, guid: be006a59c7c31534d829240a7ae00201, type: 2}
+  - {fileID: 172152, guid: eddba5641d6104143a28639e5f810a6d, type: 2}
 --- !u!114 &11400054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1411,6 +1400,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Next Level:\n\t+Stuff\n\t+More Stuff"
+--- !u!114 &11471730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1184210157, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!114 &11473566
 MonoBehaviour:
   m_ObjectHideFlags: 1

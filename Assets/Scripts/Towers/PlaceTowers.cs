@@ -91,7 +91,7 @@ public class PlaceTowers : MonoBehaviour
             rect.localPosition = new Vector3(0, rect.rect.height * -i, 0);
 
             Text text = buttonObj.transform.FindChild("Label").GetComponent<Text>();
-            text.text = string.Format(text.text, towers[i].GetComponent<TowerStats>().resourcesCost);
+            text.text = string.Format(text.text, towers[i].name, towers[i].GetComponent<TowerStats>().resourcesCost);
 
             Image image = buttonObj.transform.FindChild("Image").GetComponent<Image>();
             image.sprite = Resources.Load<Sprite>("Sprites/" + towers[i].name);

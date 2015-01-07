@@ -175,9 +175,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<b>Turret</b>
+  m_Text: '<b>{0}</b>
 
-    Cost: {0} Resources'
+    Cost: {1} Resources'
 --- !u!222 &22279056
 CanvasRenderer:
   m_ObjectHideFlags: 1
