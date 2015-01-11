@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
 
     public int maxHealth = 10; 
     public int currentHealth = 10;
+	public Collision coll;
 
     void Update()
     {
@@ -32,7 +33,22 @@ public class EnemyStats : MonoBehaviour
     {
         currentHealth -= amount;
 
-        if (currentHealth < 0)
-            currentHealth = 0;
+        if (currentHealth <= 0)
+		{
+			currentHealth = 10;
+		}
     }
+
+	void OnCollisionEnter (Collision coll)
+	{
+		if (coll.gameObject.tag == "Bullet")
+		{
+			if (currentHealth <= 1)
+			{
+				GameObject kill = GameObject.Find ("Enemy(Clone)");
+				EnemyHit KillCommand = kill.GetComponent<EnemyHit>();
+				KillCommand.EnemyHitBullet ();
+			}
+		}
+	}
 }

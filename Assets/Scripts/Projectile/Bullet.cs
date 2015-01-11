@@ -24,4 +24,20 @@ public class Bullet : MonoBehaviour
         if (distance >= range)
             Destroy(gameObject);
 	}
+
+    void OnCollisionEnter(Collision coll)
+    { 
+        if (coll.gameObject.tag == "Enemy")
+        {
+            Destroy (this.gameObject);
+
+			GameObject health = GameObject.Find ("Enemy(Clone)");
+			EnemyStats HealthScript = health.GetComponent<EnemyStats>();
+			HealthScript.RemoveHealth(1);
+
+			GameObject kill = GameObject.Find ("Enemy(Clone)");
+			EnemyHit KillCommand = kill.GetComponent<EnemyHit>();
+			KillCommand.BulletHitEnemy ();
+        }
+    }
 }
