@@ -229,6 +229,10 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHealth: 10
   currentHealth: 10
+  isTicking: 0
+  ticks: 0
+  DotDuration: 0
+  tickDamage: .5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &11400016
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}

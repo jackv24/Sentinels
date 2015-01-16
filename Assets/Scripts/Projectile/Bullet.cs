@@ -27,17 +27,22 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     { 
-        if (coll.gameObject.tag == "Enemy")
+        if (coll.gameObject.name == "Enemy(Clone)")
         {
             Destroy (this.gameObject);
 
 			GameObject health = GameObject.Find ("Enemy(Clone)");
 			EnemyStats HealthScript = health.GetComponent<EnemyStats>();
-			HealthScript.RemoveHealth(1);
-
-			GameObject kill = GameObject.Find ("Enemy(Clone)");
-			EnemyHit KillCommand = kill.GetComponent<EnemyHit>();
-			KillCommand.BulletHitEnemy ();
+			HealthScript.RemoveHealth(damage);
         }
+
+		if (coll.gameObject.name == "EnemyLvl2(Clone)")
+		{
+			Destroy (this.gameObject);
+			
+			GameObject health = GameObject.Find ("EnemyLvl2(Clone)");
+			EnemyStats HealthScript = health.GetComponent<EnemyStats>();
+			HealthScript.RemoveHealth(damage);
+		}
     }
 }
