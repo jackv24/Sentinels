@@ -12,8 +12,6 @@ public class FlameBullet : MonoBehaviour
 
 	private float distance = 0f;
 
-	//public int DotDuration;
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -36,6 +34,7 @@ public class FlameBullet : MonoBehaviour
 
 	void OnCollisionEnter(Collision coll)
 	{ 
+		//When the flame bullet hits an enemy apply the DOT effect and start the DOT timer
 		if (coll.gameObject.name == "Enemy(Clone)")
 		{
 			Destroy (this.gameObject);

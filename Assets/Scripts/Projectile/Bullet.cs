@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     { 
+        //When the bullet hits an enemy, delete the bullet and send the damage amount over to the EnemyStats script
         if (coll.gameObject.name == "Enemy(Clone)")
         {
             Destroy (this.gameObject);

@@ -50,6 +50,7 @@ public class EnemyStats : MonoBehaviour
 		}
     }
 
+    //Function that handles the damage over time effect for the flame turret
 	public void ApplyDot()
 	{
 		ticks++;
@@ -70,6 +71,7 @@ public class EnemyStats : MonoBehaviour
 		}
 	}
 
+	//A count down timer for the duration of the DOT effect
 	IEnumerator CountSeconds()
 	{
 		DotDuration = 0;
@@ -83,6 +85,7 @@ public class EnemyStats : MonoBehaviour
 
 				if (DotDuration == 10)
 				{
+					//Cancel the DOT when the timer runs out
 					StopCoroutine ("CountSeconds");
 					isTicking = false;
 				}
