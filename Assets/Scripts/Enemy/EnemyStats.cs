@@ -7,8 +7,8 @@ public class EnemyStats : MonoBehaviour
     //Health Variables
     public Slider healthBar; //The slider that will display health
 
-    public int maxHealth = 10; 
-    public float currentHealth = 10f;
+    public int maxHealth = 50; 
+    public float currentHealth = 50f;
 
 	public bool isTicking;
 	public int ticks = 0;
@@ -45,7 +45,7 @@ public class EnemyStats : MonoBehaviour
 		Debug.Log (currentHealth);
         if (currentHealth <= 0)
 		{
-			currentHealth = 10;
+			currentHealth = 50;
 			Destroy(this.gameObject);
 		}
     }
@@ -66,7 +66,7 @@ public class EnemyStats : MonoBehaviour
 		Debug.Log (currentHealth);
 		if (currentHealth <= 0)
 		{
-			currentHealth = 10;
+			currentHealth = 50;
 			Destroy (this.gameObject);
 		}
 	}
