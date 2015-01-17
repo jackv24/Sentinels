@@ -32,17 +32,15 @@ public class Bullet : MonoBehaviour
         {
             Destroy (this.gameObject);
 
-			GameObject health = GameObject.Find ("Enemy(Clone)");
-			EnemyStats HealthScript = health.GetComponent<EnemyStats>();
+			EnemyStats HealthScript = coll.collider.GetComponent<EnemyStats>();
 			HealthScript.RemoveHealth(damage);
         }
 
 		if (coll.gameObject.name == "EnemyLvl2(Clone)")
 		{
 			Destroy (this.gameObject);
-			
-			GameObject health = GameObject.Find ("EnemyLvl2(Clone)");
-			EnemyStats HealthScript = health.GetComponent<EnemyStats>();
+
+			EnemyStats HealthScript = coll.collider.GetComponent<EnemyStats>();
 			HealthScript.RemoveHealth(damage);
 		}
     }
