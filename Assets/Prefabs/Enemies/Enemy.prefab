@@ -227,12 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  maxHealth: 3
-  currentHealth: 3
-  isTicking: 0
-  ticks: 0
-  DotDuration: 0
-  tickDamage: .5
+  maxHealth: 50
+  currentHealth: 50
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

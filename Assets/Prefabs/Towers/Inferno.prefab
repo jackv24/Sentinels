@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42482ec7a214de4a942578cb7a511d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: .5
+  reloadTime: 3
   turnSpeed: 10
   firePauseTime: .25
   errorAmount: 1
@@ -1810,6 +1810,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -1947,7 +1948,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13610400
 CapsuleCollider:
@@ -1968,12 +1969,14 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129718}
+  m_HideIfInvisible: 0
 --- !u!222 &22229724
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129722}
+  m_HideIfInvisible: 0
 --- !u!223 &22300000
 Canvas:
   m_ObjectHideFlags: 1
@@ -1988,7 +1991,6 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!224 &22400000

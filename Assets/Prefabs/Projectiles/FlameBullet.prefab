@@ -60,9 +60,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400000}
   m_Layer: 10
   m_Name: FlameBullet
   m_TagString: Untagged
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   range: 10
-  damage: 1
+  damage: 5
   collisionEffect: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

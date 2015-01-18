@@ -87,7 +87,7 @@ public class Turret : MonoBehaviour
         //If an enemy has entered the trigger, reset time and set as target.
         if (other.tag == targetTag)
         {
-            nextFireTime = Time.time + (reloadTime * 0.5f);
+            //nextFireTime = Time.time + (reloadTime * 0.5f);
             target = other.transform;
         }
     }
