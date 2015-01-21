@@ -43,5 +43,11 @@ public class Bullet : MonoBehaviour
 			EnemyStats HealthScript = coll.collider.GetComponent<EnemyStats>();
 			HealthScript.RemoveHealth(damage);
 		}
+
+		if (coll.gameObject.name == "FireNova(Clone)")
+		{
+			Destroy (this.gameObject);
+			Destroy (coll.gameObject);
+		}
     }
 }
