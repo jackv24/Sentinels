@@ -31,7 +31,7 @@ public class EnemyStats : MonoBehaviour
     public void RemoveHealth(int amount)
     {
         currentHealth -= amount;
-		//Debug.Log (currentHealth);
+
         if (currentHealth <= 0)
 		{
 			currentHealth = 50;

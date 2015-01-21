@@ -31,7 +31,6 @@ GameObject:
   - 114: {fileID: 11400014}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500002}
-  - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -381,19 +380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec16723ec2245194eb56ef60c7203912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1121fbbb85d2bcf42a2c99717dc3787b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HasBulletHitEnemy: 0
-  HasEnemyBeenHit: 0
 --- !u!195 &19500000
 NavMeshAgent:
   m_ObjectHideFlags: 1
