@@ -28,20 +28,13 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter(Collision coll)
     { 
         //When the bullet hits an enemy, delete the bullet and send the damage amount over to the EnemyStats script
-        if (coll.gameObject.name == "Enemy(Clone)")
+        if (coll.gameObject.tag == "Enemy")
         {
-            Destroy (this.gameObject);
+            EnemyStats HealthScript = coll.gameObject.GetComponent<EnemyStats>();
+            //if(HealthScript)
+			    HealthScript.RemoveHealth(damage);
 
-			EnemyStats HealthScript = coll.collider.GetComponent<EnemyStats>();
-			HealthScript.RemoveHealth(damage);
+            Destroy(this.gameObject);
         }
-
-		if (coll.gameObject.name == "EnemyLvl2(Clone)")
-		{
-			Destroy (this.gameObject);
-
-			EnemyStats HealthScript = coll.collider.GetComponent<EnemyStats>();
-			HealthScript.RemoveHealth(damage);
-		}
     }
 }

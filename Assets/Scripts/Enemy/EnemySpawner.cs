@@ -7,10 +7,12 @@ public class EnemySpawner : MonoBehaviour
 	public GameObject EnemyLvl2;
     public float EnemySpawn = 100f;
 
+    private GameObject enemies;
+
 	// Use this for initialization
 	void Start ()
     {
-
+        enemies = new GameObject("Enemies");
 	}
 	
 	// Update is called once per frame
@@ -29,11 +31,13 @@ public class EnemySpawner : MonoBehaviour
             {
                 //Spawns a normal enemy
                 GameObject spawn = Instantiate(Enemy, transform.position, transform.rotation) as GameObject;
+                spawn.transform.parent = enemies.transform;
             }
 			else
 			{
                 //Spawns a special enemy
 				GameObject spawn = Instantiate (EnemyLvl2, transform.position, transform.rotation) as GameObject;
+                spawn.transform.parent = enemies.transform;
 			}
             
             //Resets the spawn timer to 100

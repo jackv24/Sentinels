@@ -15,21 +15,15 @@ public class ButtonPress : MonoBehaviour
 	{
 		//Finds the location of the menu music and assigns it a variable
 		Music = (AudioSource)gameObject.AddComponent ("AudioSource");
-		AudioClip MusicClip;
-		MusicClip = (AudioClip)Resources.Load("Music/Menu_Music.mp3");
-		Music.clip = MusicClip;
+        Music.clip = MMusic;
 
 		//Finds the location of the button pressed sound effect and assigns it a variable
 		Confirm = (AudioSource)gameObject.AddComponent ("AudioSource");
-		AudioClip ConfirmClip;
-		ConfirmClip = (AudioClip)Resources.Load("SFX/Menu_Confirm.wav");
-		Confirm.clip = ConfirmClip;
+        Confirm.clip = LMB;
 
 		//Finds the location of the cancellation sound effect and assigns it a variable
 		Cancel = (AudioSource)gameObject.AddComponent ("AudioSource");
-		AudioClip CancelClip;
-		CancelClip = (AudioClip)Resources.Load("SFX/Menu_Cancel.wav");
-		Cancel.clip = CancelClip;
+        Cancel.clip = Esc;
 
 		audio.PlayOneShot (MMusic, 100f);
 	}
@@ -37,6 +31,9 @@ public class ButtonPress : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+        Music.volume = Preferences.instance.musicVolume * Preferences.instance.masterVolume;
+        Confirm.volume = Preferences.instance.soundVolume * Preferences.instance.masterVolume;
+        Cancel.volume = Preferences.instance.soundVolume * Preferences.instance.masterVolume;
 
 	}
 
