@@ -9,17 +9,9 @@ public class EnemyStats : MonoBehaviour
 
     public float maxHealth = 50f; 
     public float currentHealth = 50f;
-	public float incHealth = 0f;
 
     void Update()
     {
-		incHealth += Time.deltaTime;
-
-		if (currentHealth == 50)
-		{
-			maxHealth = incHealth + 50f;
-		}
-
         if (healthBar)
         {
             //Set health slider value to health value (0-1)
