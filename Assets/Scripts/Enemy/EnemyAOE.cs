@@ -85,6 +85,7 @@ public class EnemyAOE : MonoBehaviour
 		{
 			TowerStats KillTower = col.GetComponent<TowerStats>();
 			PlayerStats KillPlayer = col.GetComponent<PlayerStats>();
+			CoreDamage KillCore = col.GetComponent<CoreDamage>();
 
 			if (KillTower != null)
 			{
@@ -100,6 +101,14 @@ public class EnemyAOE : MonoBehaviour
 				float proximity = (location - enemy.transform.position).magnitude;
 				float effect = 1 - (proximity/radius);
 				KillPlayer.RemoveHealth ((int)damage * (int)effect);
+			}
+
+			if (KillCore != null)
+			{
+				//Linear fall off effect
+				float proximity = (location - enemy.transform.position).magnitude;
+				float effect = 1 - (proximity/radius);
+				KillCore.RemoveHealth ((int)damage * (int)effect);
 			}
 		}
 	}	

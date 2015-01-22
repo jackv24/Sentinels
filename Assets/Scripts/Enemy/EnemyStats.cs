@@ -17,7 +17,7 @@ public class EnemyStats : MonoBehaviour
 
 		if (currentHealth == 50)
 		{
-			maxHealth = incHealth = 50f;
+			maxHealth = incHealth + 50f;
 		}
 
         if (healthBar)

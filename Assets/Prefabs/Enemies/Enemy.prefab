@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .5, z: 7}
+  m_LocalPosition: {x: 26.1630898, y: .200009346, z: 9.80260468}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400000}
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050c2edc2ad03fa41ade7186c1d4bf8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  maxHealth: 20
-  currentHealth: 20
+  healthBar: {fileID: 11400008}
+  maxHealth: 50
+  currentHealth: 50
   incHealth: 0
 --- !u!114 &11400004
 MonoBehaviour:
@@ -415,7 +415,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: .422618359, y: 0, z: 0, w: .906307757}
+  m_LocalRotation: {x: .422618002, y: 0, z: 0, w: .906307995}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .00999999978, y: .00999999978, z: 1}
   m_Children:
@@ -424,7 +424,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2.62260437e-06, y: 1}
   m_SizeDelta: {x: 200, y: 24}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22400002
