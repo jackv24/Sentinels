@@ -45,9 +45,9 @@ GameObject:
   - 136: {fileID: 13600000}
   - 23: {fileID: 2300000}
   - 195: {fileID: 19500000}
-  - 114: {fileID: 11400008}
-  - 114: {fileID: 11400006}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: EnemyLvl2
@@ -167,15 +167,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoolDown: 500
   enemy: {fileID: 100004}
-  numPoints: 5
+  numPoints: 10
   centerPos: {x: 0, y: 0, z: 0}
   Prefab: {fileID: 100008, guid: 1940c08f97c87444eaf8717861c41300, type: 2}
   radiusX: 5
   radiusY: 5
   pos: {x: 0, y: 0, z: 0}
   vertical: 0
-  range: 10
-  speed: 10
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,8 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  maxHealth: 50
-  currentHealth: 50
+  maxHealth: 20
+  currentHealth: 20
+  incHealth: 0
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

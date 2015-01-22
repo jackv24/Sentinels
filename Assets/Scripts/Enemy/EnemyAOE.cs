@@ -27,16 +27,10 @@ public class EnemyAOE : MonoBehaviour
 	//*is set during each iteration of the loop
 	Vector3 pointPos;
 
-	//public float range = 10f;
-	//public float speed = 10f;
-	//private float distance = 0f;
-
-	static GameObject kill;
-
 	// Use this for initialization
 	void Start () 
 	{
-		kill = GameObject.FindGameObjectWithTag ("AOE");
+	
 	}
 	
 	// Update is called once per frame
@@ -51,7 +45,7 @@ public class EnemyAOE : MonoBehaviour
 
 			if (ChosenNum <= 2)
 			{
-				AOE (enemy.transform.position, 20f, 10f);
+				AOE (enemy.transform.position, 15f, 10f);
 			}
 
 			CoolDown = 200f;
@@ -79,12 +73,11 @@ public class EnemyAOE : MonoBehaviour
 			}
 			else if (!vertical)
 			{
-				pointPos = new Vector3(x, 0, y - 5) + centerPos;
+				pointPos = new Vector3(x, 0, y) + centerPos;
 			}
 
 			//place the prefab at given position
 			Instantiate (Prefab, pointPos, Quaternion.identity);
-			//kill.transform.Translate (Vector3.forward * Time.deltaTime * speed);
 		}
 
 		Collider[] objectsInRange = Physics.OverlapSphere (location, radius);
@@ -109,7 +102,5 @@ public class EnemyAOE : MonoBehaviour
 				KillPlayer.RemoveHealth ((int)damage * (int)effect);
 			}
 		}
-	}
-
-
+	}	
 }

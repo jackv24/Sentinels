@@ -70,6 +70,7 @@ public class PlayerStats : MonoBehaviour
     //...and resources
     public void AddResources(int amount)
     {
+		Debug.Log ("Values sent");
         currentResources += amount;
     }
 

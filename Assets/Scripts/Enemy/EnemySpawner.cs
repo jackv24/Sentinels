@@ -28,12 +28,12 @@ public class EnemySpawner : MonoBehaviour
             if (ChosenNum <= 2)
             {
                 //Spawns a normal enemy
-                GameObject Spawn = Instantiate(Enemy, transform.position, transform.rotation) as GameObject;
+                GameObject spawn = Instantiate(Enemy, transform.position, transform.rotation) as GameObject;
             }
 			else
 			{
                 //Spawns a special enemy
-				GameObject Spawn = Instantiate (EnemyLvl2, transform.position, transform.rotation) as GameObject;
+				GameObject spawn = Instantiate (EnemyLvl2, transform.position, transform.rotation) as GameObject;
 			}
             
             //Resets the spawn timer to 100
