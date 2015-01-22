@@ -16,6 +16,12 @@ public class CameraFollow : MonoBehaviour
 
     public float CameraZoomSpeed = 50.0f;
 
+    void Start()
+    {
+        if (target == null)
+            target = GameObject.FindWithTag("Player").transform;
+    }
+
     void LateUpdate()
     {
         //Don't do anything if no player is registered.
